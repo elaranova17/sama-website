@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>South American Metal Alliance | Precious Metals Export</title>
+  <meta name="description" content="South American Metal Alliance — Institutional precious metals export. Swiss standards. Colombian origin. Full traceability.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #DAAF57;
+      --gold-light: #e8c97a;
+      --gold-pale: rgba(218,175,87,0.12);
+      --black: #0F0F0F;
+      --black-soft: #181818;
+      --black-card: #131313;
+      --silver: #C0C0C2;
+      --cream: #F4F0E8;
+      --white: #FFFFFF;
+      --border: rgba(218,175,87,0.16);
+      --border-s: rgba(255,255,255,0.06);
+      --text-body: rgba(255,255,255,0.62);
+      --text-muted: rgba(255,255,255,0.38);
+      --ease: cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--black);color:var(--white);font-family:"Open Sans",sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden;}
+    ::-webkit-scrollbar{width:2px;}
+    ::-webkit-scrollbar-thumb{background:rgba(218,175,87,0.4);}
+
+```
+/* TYPE */
+.display{font-family:"Cormorant Garamond",serif;font-size:clamp(2.6rem,5.5vw,5rem);font-weight:300;line-height:1.06;letter-spacing:-0.01em;}
+.headline{font-family:"Cormorant Garamond",serif;font-size:clamp(1.7rem,3vw,2.9rem);font-weight:400;line-height:1.18;}
+.overline{font-size:0.58rem;font-weight:400;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);}
+.body{font-size:clamp(0.875rem,1.1vw,0.95rem);font-weight:300;line-height:1.95;color:var(--text-body);}
+.caption{font-size:0.72rem;font-weight:300;color:var(--text-muted);letter-spacing:0.04em;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;height:76px;transition:all 0.5s var(--ease);}
+nav.dark{background:rgba(15,15,15,0.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--border-s);height:62px;}
+.nav-logo{cursor:pointer;}
+.nav-logo img{height:36px;width:auto;transition:height 0.4s;}
+nav.dark .nav-logo img{height:29px;}
+.nav-center{display:flex;gap:2.8rem;list-style:none;}
+.nav-center a{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;cursor:pointer;transition:color 0.3s;position:relative;}
+.nav-center a::after{content:"";position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--gold);transition:width 0.4s var(--ease);}
+.nav-center a:hover{color:var(--white);}
+.nav-center a:hover::after{width:100%;}
+.nav-right{display:flex;align-items:center;gap:1.2rem;}
+.lang-btn{font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;background:none;border:none;cursor:pointer;color:var(--text-muted);transition:color 0.3s;padding:0;}
+.lang-btn.on{color:var(--gold);}
+.lang-sep{width:1px;height:8px;background:var(--border-s);}
+.ham{display:none;flex-direction:column;gap:5px;cursor:pointer;}
+.ham span{display:block;width:20px;height:1px;background:var(--white);transition:all 0.3s;}
+.mob-nav{display:none;position:fixed;inset:0;background:rgba(15,15,15,0.98);z-index:99;flex-direction:column;align-items:center;justify-content:center;gap:2rem;}
+.mob-nav.on{display:flex;}
+.mob-nav a{font-family:"Cormorant Garamond",serif;font-size:2.2rem;color:var(--text-muted);text-decoration:none;cursor:pointer;transition:color 0.3s;}
+.mob-nav a:hover{color:var(--gold);}
+.mob-close{position:absolute;top:1.6rem;right:5vw;background:none;border:none;color:var(--text-muted);font-size:1.4rem;cursor:pointer;}
+
+/* PAGES */
+.page{display:none;}.page.on{display:block;}
+
+/* ── HERO ── */
+.hero{position:relative;width:100%;height:100vh;min-height:660px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.hero-media{position:absolute;inset:0;}
+.hero-media video{width:100%;height:100%;object-fit:cover;opacity:0.38;}
+.hero-img{position:absolute;inset:0;background-size:cover;background-position:center 30%;opacity:0.32;}
+.hero-vignette{position:absolute;inset:0;background:radial-gradient(ellipse 120% 100% at 50% 50%, transparent 30%, rgba(15,15,15,0.6) 100%);}
+.hero-fade{position:absolute;inset:0;background:linear-gradient(to bottom, rgba(15,15,15,0.1) 0%, transparent 30%, rgba(15,15,15,0.5) 72%, rgba(15,15,15,1) 100%);}
+.hero-body{position:relative;z-index:2;text-align:center;padding:0 2rem;animation:rise 1.8s var(--ease) both;}
+@keyframes rise{from{opacity:0;transform:translateY(26px);}to{opacity:1;transform:translateY(0);}}
+.hero-monogram{font-family:"Cormorant Garamond",serif;font-size:clamp(1rem,1.8vw,1.4rem);font-weight:400;letter-spacing:0.55em;color:var(--white);margin-bottom:0.9rem;animation:rise 1.8s var(--ease) 0.2s both;}
+.hero-tagline{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(0.9rem,1.6vw,1.15rem);font-weight:300;letter-spacing:0.08em;color:var(--gold);margin-bottom:2.6rem;animation:rise 1.8s var(--ease) 0.38s both;}
+.hero-rule{width:44px;height:1px;background:var(--gold);margin:0 auto 2.6rem;animation:rise 1.8s var(--ease) 0.5s both;}
+.hero-btn{display:inline-block;font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--white);border:1px solid rgba(218,175,87,0.4);padding:0.9rem 2.4rem;cursor:pointer;background:transparent;transition:all 0.4s var(--ease);animation:rise 1.8s var(--ease) 0.65s both;}
+.hero-btn:hover{background:var(--gold);border-color:var(--gold);color:var(--black);}
+.hero-scroll{position:absolute;bottom:2.4rem;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:0.5rem;animation:rise 1.8s var(--ease) 1s both;}
+.hero-scroll span{font-size:0.55rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.28);}
+.scroll-tick{width:1px;height:36px;background:linear-gradient(to bottom,var(--gold),transparent);animation:tick 2.2s ease-in-out infinite;}
+@keyframes tick{0%,100%{opacity:0.3;}50%{opacity:0.9;}}
+
+/* ── SHARED SECTION ── */
+section{padding:clamp(4.5rem,9vw,8rem) 0;}
+.wrap{max-width:1200px;margin:0 auto;padding:0 5vw;}
+.wrap-sm{max-width:760px;margin:0 auto;padding:0 5vw;}
+.rule{width:36px;height:1px;background:var(--gold);margin-bottom:1.8rem;}
+.rule.cx{margin-left:auto;margin-right:auto;}
+.spacer{height:1.6rem;}
+.spacer-lg{height:3rem;}
+
+/* ── SPLIT ── */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:5.5rem;align-items:center;}
+.split.flip .split-img{order:-1;}
+.split-img{position:relative;}
+.split-img img{width:100%;height:480px;object-fit:cover;display:block;}
+.split-img-frame{position:absolute;top:-12px;left:-12px;right:12px;bottom:12px;border:1px solid var(--border);pointer-events:none;z-index:-1;}
+.split-text{}
+
+/* ── STATS ── */
+.stats-band{background:var(--black-soft);border-top:1px solid var(--border-s);border-bottom:1px solid var(--border-s);padding:4rem 0;}
+.stats-row{display:grid;grid-template-columns:repeat(3,1fr);}
+.stat{text-align:center;padding:2rem 1.5rem;border-right:1px solid var(--border-s);}
+.stat:last-child{border-right:none;}
+.stat-val{font-family:"Cormorant Garamond",serif;font-size:clamp(2rem,4vw,3.5rem);font-weight:300;color:var(--gold);letter-spacing:-0.02em;line-height:1;display:block;margin-bottom:0.6rem;}
+.stat-lbl{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-muted);}
+
+/* ── CARDS GRID ── */
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border-s);}
+.card{background:var(--black-card);padding:2.8rem 2.2rem;position:relative;overflow:hidden;transition:background 0.4s;}
+.card::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transition:transform 0.5s var(--ease);}
+.card:hover{background:rgba(218,175,87,0.025);}
+.card:hover::before{transform:scaleX(1);}
+.card-n{font-family:"Cormorant Garamond",serif;font-size:0.72rem;color:var(--gold);opacity:0.45;letter-spacing:0.2em;display:block;margin-bottom:1.6rem;}
+.card-t{font-family:"Cormorant Garamond",serif;font-size:1.25rem;font-weight:500;color:var(--white);margin-bottom:0.8rem;}
+.card-p{font-size:0.78rem;line-height:1.82;color:rgba(255,255,255,0.4);}
+
+/* ── CTA BAND ── */
+.cta-band{background:var(--black-soft);border-top:1px solid var(--border);border-bottom:1px solid var(--border);text-align:center;padding:5.5rem 0;}
+
+/* ── BUTTONS ── */
+.btn{display:inline-block;font-size:0.6rem;letter-spacing:0.28em;text-transform:uppercase;padding:0.9rem 2.3rem;cursor:pointer;transition:all 0.4s var(--ease);text-decoration:none;border:none;}
+.btn-solid{background:var(--gold);color:var(--black);}
+.btn-solid:hover{background:var(--gold-light);}
+.btn-ghost{background:transparent;color:var(--white);border:1px solid rgba(218,175,87,0.35);}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
+
+/* ── PAGE HERO ── */
+.pg-hero{position:relative;height:55vh;min-height:420px;display:flex;align-items:flex-end;padding-bottom:4.5rem;overflow:hidden;}
+.pg-bg{position:absolute;inset:0;background-size:cover;background-position:center;}
+.pg-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(15,15,15,0.4) 0%,rgba(15,15,15,0.2) 30%,rgba(15,15,15,0.85) 78%,#0F0F0F 100%);}
+.pg-ct{position:relative;z-index:2;padding:0 5vw;max-width:1200px;margin:0 auto;width:100%;}
+
+/* ── VALUES ── */
+.vals{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem 5rem;margin-top:3.5rem;}
+.val{border-top:1px solid var(--border);padding-top:1.4rem;}
+.val-t{font-family:"Cormorant Garamond",serif;font-size:1.35rem;font-weight:500;color:var(--white);margin-bottom:0.6rem;}
+.val-p{font-size:0.82rem;color:rgba(255,255,255,0.42);line-height:1.88;}
+
+/* ── CITIES ── */
+.cities{display:grid;grid-template-columns:1fr 1fr;height:480px;}
+.city-p{position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:2.8rem;}
+.city-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 0.9s var(--ease);}
+.city-p:hover .city-bg{transform:scale(1.04);}
+.city-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(15,15,15,0.9) 0%,rgba(15,15,15,0.2) 55%,transparent 100%);}
+.city-ct{position:relative;z-index:2;}
+.city-nm{font-family:"Cormorant Garamond",serif;font-size:clamp(1.5rem,2.5vw,2.3rem);font-weight:400;color:var(--white);margin-bottom:0.2rem;}
+.city-sub{font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);}
+
+/* ── SERVICES ── */
+.svc{display:grid;grid-template-columns:1fr 1fr;margin-bottom:1px;background:var(--border-s);}
+.svc.r .svc-img{order:-1;}
+.svc-img img{width:100%;height:380px;object-fit:cover;display:block;}
+.svc-ct{background:var(--black-card);padding:3.5rem 4rem;display:flex;flex-direction:column;justify-content:center;}
+.svc-idx{font-family:"Cormorant Garamond",serif;font-size:3rem;font-weight:300;color:rgba(218,175,87,0.1);line-height:1;margin-bottom:0.6rem;}
+.svc-t{font-family:"Cormorant Garamond",serif;font-size:1.65rem;font-weight:400;color:var(--white);margin-bottom:1rem;}
+.svc-p{font-size:0.83rem;color:rgba(255,255,255,0.48);line-height:1.9;margin-bottom:1.8rem;}
+.tags{display:flex;flex-wrap:wrap;gap:0.4rem;}
+.tag{font-size:0.56rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(218,175,87,0.2);padding:0.26rem 0.65rem;}
+
+/* ── COMPLIANCE ── */
+.comp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border-s);margin-top:3.5rem;}
+.comp-c{background:var(--black-card);padding:2.6rem 2.2rem;transition:background 0.4s;}
+.comp-c:hover{background:rgba(218,175,87,0.03);}
+.comp-ico{width:32px;height:32px;border:1px solid rgba(218,175,87,0.28);display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;}
+.comp-ico svg{width:14px;height:14px;stroke:var(--gold);fill:none;stroke-width:1.5;}
+.comp-t{font-family:"Cormorant Garamond",serif;font-size:1.15rem;font-weight:500;color:var(--white);margin-bottom:0.6rem;}
+.comp-p{font-size:0.78rem;color:rgba(255,255,255,0.4);line-height:1.85;}
+.comp-cd{margin-top:1rem;font-size:0.56rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(218,175,87,0.5);}
+
+/* ── FOUNDERS ── */
+.founders{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border-s);margin-top:3.5rem;}
+.founder{background:var(--black-card);padding:3rem 2.4rem;transition:background 0.4s;}
+.founder:hover{background:rgba(218,175,87,0.025);}
+.f-origin{font-size:0.56rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.3rem;display:block;}
+.f-name{font-family:"Cormorant Garamond",serif;font-size:1.5rem;font-weight:400;color:var(--white);line-height:1.2;margin-bottom:0.25rem;}
+.f-role{font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-muted);margin-bottom:1.4rem;}
+.f-div{width:26px;height:1px;background:rgba(218,175,87,0.3);margin-bottom:1.4rem;}
+.f-q{font-family:"Cormorant Garamond",serif;font-size:0.95rem;font-style:italic;color:rgba(255,255,255,0.48);line-height:1.75;}
+
+/* ── CONTACT ── */
+.contact-g{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;}
+.locs{display:flex;flex-direction:column;gap:1.8rem;margin-top:3rem;}
+.loc{border-top:1px solid var(--border-s);padding-top:1.4rem;}
+.loc-city{font-family:"Cormorant Garamond",serif;font-size:1.1rem;font-weight:500;color:var(--white);margin-bottom:0.35rem;}
+.loc-d{font-size:0.78rem;color:var(--text-muted);line-height:1.8;}
+.loc-d a{color:var(--gold);text-decoration:none;transition:opacity 0.3s;}
+.loc-d a:hover{opacity:0.7;}
+.form-box{background:var(--black-card);border:1px solid var(--border-s);padding:3rem;}
+.fg{margin-bottom:1.5rem;}
+.fl{display:block;font-size:0.56rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--text-muted);margin-bottom:0.5rem;}
+.fi,.fsel,.fta{width:100%;background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,0.09);padding:0.65rem 0;font-family:"Open Sans",sans-serif;font-size:0.83rem;font-weight:300;color:var(--white);outline:none;transition:border-color 0.3s;-webkit-appearance:none;}
+.fsel{cursor:pointer;}
+.fsel option{background:var(--black-soft);color:var(--white);}
+.fi:focus,.fsel:focus,.fta:focus{border-bottom-color:var(--gold);}
+.fi::placeholder,.fta::placeholder{color:rgba(255,255,255,0.16);}
+.fta{resize:none;height:90px;}
+.fsub{width:100%;padding:1rem;background:var(--gold);border:none;font-family:"Open Sans",sans-serif;font-size:0.6rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--black);cursor:pointer;transition:background 0.3s;margin-top:0.8rem;}
+.fsub:hover{background:var(--gold-light);}
+
+/* ── PULL QUOTE ── */
+.pull{font-family:"Cormorant Garamond",serif;font-size:clamp(1.35rem,2.6vw,2.2rem);font-weight:300;font-style:italic;color:var(--white);line-height:1.55;text-align:center;max-width:720px;margin:0 auto;}
+.pull em{color:var(--gold);font-style:italic;}
+
+/* ── FOOTER ── */
+footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding:3.5rem 0 2rem;}
+.ft-g{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:3rem;margin-bottom:2.8rem;}
+.ft-logo{height:28px;display:block;margin-bottom:1.1rem;}
+.ft-tag{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:0.82rem;color:rgba(255,255,255,0.28);margin-bottom:0;}
+.ft-ht{font-size:0.56rem;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.ft-ul{list-style:none;display:flex;flex-direction:column;gap:0.5rem;}
+.ft-ul a{font-size:0.76rem;color:var(--text-muted);text-decoration:none;cursor:pointer;transition:color 0.3s;}
+.ft-ul a:hover{color:var(--white);}
+.ft-cl{font-size:0.76rem;color:var(--text-muted);margin-bottom:0.35rem;}
+.ft-cl a{color:var(--gold);text-decoration:none;}
+.ft-bot{border-top:1px solid var(--border-s);padding-top:1.6rem;display:flex;justify-content:space-between;}
+.ft-leg{font-size:0.65rem;color:rgba(255,255,255,0.16);}
+
+/* ── FADE UP ── */
+.fu{opacity:0;transform:translateY(20px);transition:opacity 0.72s var(--ease),transform 0.72s var(--ease);}
+.fu.on{opacity:1;transform:translateY(0);}
+.fu.d1{transition-delay:0.1s;}.fu.d2{transition-delay:0.2s;}.fu.d3{transition-delay:0.32s;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .cards{grid-template-columns:1fr 1fr;}
+  .founders{grid-template-columns:1fr;}
+  .split,.contact-g{grid-template-columns:1fr;gap:2.8rem;}
+  .split-img img,.al-img img{height:340px;}
+  .cities{grid-template-columns:1fr;height:auto;}
+  .city-p{min-height:280px;}
+  .svc{grid-template-columns:1fr;}.svc.r .svc-img{order:0;}
+  .svc-img img{height:260px;}
+  .comp-grid{grid-template-columns:1fr 1fr;}
+  .vals{grid-template-columns:1fr;}
+  .ft-g{grid-template-columns:1fr 1fr;gap:2rem;}
+}
+@media(max-width:768px){
+  .nav-center{display:none;}.ham{display:flex;}
+  .stats-row{grid-template-columns:1fr;}
+  .stat{border-right:none;border-bottom:1px solid var(--border-s);}
+  .stat:last-child{border-bottom:none;}
+  .cards{grid-template-columns:1fr;}
+  .comp-grid{grid-template-columns:1fr;}
+  .form-box{padding:1.8rem;}
+  .ft-g{grid-template-columns:1fr;gap:1.8rem;}
+  .ft-bot{flex-direction:column;gap:0.6rem;}
+}
+```
+
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+
+<nav id="nav">
+  <div class="nav-logo" onclick="go('home')">
+    <span style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:400;letter-spacing:0.45em;color:var(--white);text-transform:uppercase;">S·A·M·A</span>
+  </div>
+  <ul class="nav-center">
+    <li><a onclick="go('alliance')" data-en="L'Alliance" data-fr="L'Alliance" data-es="La Alianza">L'Alliance</a></li>
+    <li><a onclick="go('actifs')" data-en="Assets" data-fr="Actifs" data-es="Activos">Assets</a></li>
+    <li><a onclick="go('ethique')" data-en="Ethics" data-fr="Éthique" data-es="Ética">Ethics</a></li>
+    <li><a onclick="go('founders')" data-en="Founders" data-fr="Fondateurs" data-es="Fundadores">Founders</a></li>
+    <li><a onclick="go('contact')" data-en="Contact" data-fr="Contact" data-es="Contacto">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <div style="display:flex;align-items:center;gap:0.6rem;">
+      <button class="lang-btn on" id="bEN" onclick="setLang('en')">EN</button>
+      <div class="lang-sep"></div>
+      <button class="lang-btn" id="bFR" onclick="setLang('fr')">FR</button>
+      <div class="lang-sep"></div>
+      <button class="lang-btn" id="bES" onclick="setLang('es')">ES</button>
+    </div>
+    <div class="ham" onclick="toggleMob()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<div class="mob-nav" id="mobNav">
+  <button class="mob-close" onclick="toggleMob()">✕</button>
+  <a onclick="go('home');toggleMob()" data-en="Home" data-fr="Accueil" data-es="Inicio">Home</a>
+  <a onclick="go('alliance');toggleMob()" data-en="L'Alliance" data-fr="L'Alliance" data-es="La Alianza">L'Alliance</a>
+  <a onclick="go('actifs');toggleMob()" data-en="Assets" data-fr="Actifs" data-es="Activos">Assets</a>
+  <a onclick="go('ethique');toggleMob()" data-en="Ethics" data-fr="Éthique" data-es="Ética">Ethics</a>
+  <a onclick="go('founders');toggleMob()" data-en="Founders" data-fr="Fondateurs" data-es="Fundadores">Founders</a>
+  <a onclick="go('contact');toggleMob()" data-en="Contact" data-fr="Contact" data-es="Contacto">Contact</a>
+</div>
+
+<!-- ══════════════════════════════
+     HOME
+══════════════════════════════ -->
+
+<div id="page-home" class="page on">
+
+  <!-- HERO: full screen, S·A·M·A monogram, no logo image -->
+
+  <section class="hero">
+    <div class="hero-media">
+      <video autoplay muted loop playsinline><source src="sama_hero.mp4" type="video/mp4"></video>
+      <div class="hero-img" style="background-image:url('IMG_0341.jpeg')"></div>
+    </div>
+    <div class="hero-vignette"></div>
+    <div class="hero-fade"></div>
+    <div class="hero-body">
+      <div class="hero-monogram">S · A · M · A</div>
+      <div class="hero-tagline">L'Excellence Suisse · La Richesse Colombienne</div>
+      <div class="hero-rule"></div>
+      <button class="hero-btn" onclick="go('alliance')"
+        data-en="Discover the Alliance" data-fr="Découvrir l'Alliance" data-es="Descubrir la Alianza">
+        Discover the Alliance
+      </button>
+    </div>
+    <div class="hero-scroll"><div class="scroll-tick"></div><span>Scroll</span></div>
+  </section>
+
+  <!-- WHO WE ARE — warm editorial tone -->
+
+  <section style="background:var(--black);">
+    <div class="wrap">
+      <div class="split">
+        <div class="split-img fu">
+          <img src="IMG_0341.jpeg" alt="La Chaux-de-Fonds office"
+               onerror="this.style.height='480px';this.style.background='#181818';this.style.display='block'">
+          <div class="split-img-frame"></div>
+        </div>
+        <div class="split-text fu d2">
+          <span class="overline" data-en="Who We Are" data-fr="Qui Nous Sommes" data-es="Quiénes Somos">Who We Are</span>
+          <div class="rule" style="margin-top:1.2rem;"></div>
+          <h2 class="headline" data-en="Where Swiss precision meets the richness of Colombia." data-fr="Là où la précision suisse rencontre la richesse de la Colombie." data-es="Donde la precisión suiza encuentra la riqueza de Colombia.">
+            Where Swiss precision meets<br>the richness of Colombia.
+          </h2>
+          <div class="spacer"></div>
+          <p class="body"
+            data-en="South American Metal Alliance was born from a shared belief: that precious metals deserve to be handled with the same care as the cultures that produce them. We work at the intersection of two worlds — founded in Medellín, governed in La Chaux-de-Fonds — bringing together the warmth of Colombia and the precision of Switzerland."
+            data-fr="South American Metal Alliance est née d'une conviction partagée : que les métaux précieux méritent d'être traités avec le même soin que les cultures qui les produisent. Nous travaillons à l'intersection de deux mondes — fondée à Medellín, gouvernée à La Chaux-de-Fonds."
+            data-es="South American Metal Alliance nació de una convicción compartida: que los metales preciosos merecen ser manejados con el mismo cuidado que las culturas que los producen. Trabajamos en la intersección de dos mundos — fundada en Medellín, gobernada en La Chaux-de-Fonds.">
+            South American Metal Alliance was born from a shared belief: that precious metals deserve to be handled with the same care as the cultures that produce them. We work at the intersection of two worlds — founded in Medellín, governed in La Chaux-de-Fonds — bringing together the warmth of Colombia and the precision of Switzerland.
+          </p>
+          <div class="spacer-lg"></div>
+          <button class="btn btn-ghost" onclick="go('alliance')"
+            data-en="Our Story" data-fr="Notre Histoire" data-es="Nuestra Historia">Our Story</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NUMBERS -->
+
+  <section class="stats-band">
+    <div class="wrap">
+      <div class="stats-row">
+        <div class="stat fu"><span class="stat-val">$250M</span><span class="stat-lbl" data-en="Initial Capital" data-fr="Capital Initial" data-es="Capital Inicial">Initial Capital</span></div>
+        <div class="stat fu d1"><span class="stat-val">100%</span><span class="stat-lbl" data-en="Traced, Every Gram" data-fr="Tracé, Chaque Gramme" data-es="Trazado, Cada Gramo">Traced, Every Gram</span></div>
+        <div class="stat fu d2"><span class="stat-val">2</span><span class="stat-lbl" data-en="Continents, One Alliance" data-fr="Continents, Une Alliance" data-es="Continentes, Una Alianza">Continents, One Alliance</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOUR PILLARS -->
+
+  <section style="background:var(--black);">
+    <div class="wrap">
+      <div class="fu" style="text-align:center;margin-bottom:4rem;">
+        <span class="overline" data-en="What We Stand For" data-fr="Ce en quoi nous croyons" data-es="En qué creemos">What We Stand For</span>
+        <div class="spacer"></div>
+        <h2 class="headline" data-en="Four principles. Every transaction." data-fr="Quatre principes. Chaque transaction." data-es="Cuatro principios. Cada transacción.">Four principles. Every transaction.</h2>
+      </div>
+      <div class="cards">
+        <div class="card fu"><span class="card-n">01</span><div class="card-t" data-en="Sovereign Metals" data-fr="Métaux Souverains" data-es="Metales Soberanos">Sovereign Metals</div><p class="card-p" data-en="Every gram originates in Colombia and is documented from the moment it leaves the ground. Origin matters. We know exactly where ours comes from." data-fr="Chaque gramme provient de Colombie et est documenté dès qu'il quitte le sol. L'origine compte. Nous savons exactement d'où vient le nôtre." data-es="Cada gramo se origina en Colombia y está documentado desde el momento en que sale del suelo. El origen importa. Sabemos exactamente de dónde viene el nuestro.">Every gram originates in Colombia and is documented from the moment it leaves the ground. Origin matters. We know exactly where ours comes from.</p></div>
+        <div class="card fu d1"><span class="card-n">02</span><div class="card-t" data-en="Swiss Standards" data-fr="Standards Suisses" data-es="Estándares Suizos">Swiss Standards</div><p class="card-p" data-en="Our operational framework is shaped in La Chaux-de-Fonds — the birthplace of Swiss watchmaking. That same tradition of precision guides everything we do." data-fr="Notre cadre opérationnel est défini à La Chaux-de-Fonds — le berceau de l'horlogerie suisse. Cette même tradition de précision guide tout ce que nous faisons." data-es="Nuestro marco operativo se define en La Chaux-de-Fonds — la cuna de la relojería suiza. Esa misma tradición de precisión guía todo lo que hacemos.">Our operational framework is shaped in La Chaux-de-Fonds — the birthplace of Swiss watchmaking. That same tradition of precision guides everything we do.</p></div>
+        <div class="card fu d2"><span class="card-n">03</span><div class="card-t" data-en="Full Traceability" data-fr="Traçabilité Complète" data-es="Trazabilidad Completa">Full Traceability</div><p class="card-p" data-en="We believe transparency builds the best partnerships. Every shipment is traceable, certified, and ready for verification by our partners at any time." data-fr="Nous croyons que la transparence construit les meilleures alliances. Chaque envoi est traçable, certifié et prêt à être vérifié par nos partenaires." data-es="Creemos que la transparencia construye las mejores alianzas. Cada envío es trazable, certificado y listo para ser verificado por nuestros socios.">We believe transparency builds the best partnerships. Every shipment is traceable, certified, and ready for verification by our partners at any time.</p></div>
+        <div class="card fu d3"><span class="card-n">04</span><div class="card-t" data-en="Responsible Trade" data-fr="Commerce Responsable" data-es="Comercio Responsable">Responsible Trade</div><p class="card-p" data-en="Ethical sourcing isn't a checkbox for us — it's the foundation. We work only with verified sources, and our anti-money laundering protocols are embedded in every step." data-fr="L'approvisionnement éthique n'est pas une case à cocher — c'est le fondement. Nous travaillons uniquement avec des sources vérifiées." data-es="El abastecimiento ético no es una casilla para nosotros — es el fundamento. Trabajamos únicamente con fuentes verificadas.">Ethical sourcing isn't a checkbox for us — it's the foundation. We work only with verified sources, and our compliance protocols are embedded in every step.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDITORIAL FULLWIDTH IMAGE with text overlay -->
+
+  <section style="padding:0;position:relative;height:520px;overflow:hidden;">
+    <div style="position:absolute;inset:0;background-image:url('IMG_0347.jpeg');background-size:cover;background-position:center 40%;opacity:0.4;"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(15,15,15,0.92) 0%,rgba(15,15,15,0.5) 55%,rgba(15,15,15,0.15) 100%);"></div>
+    <div style="position:relative;z-index:2;height:100%;display:flex;align-items:center;">
+      <div class="wrap">
+        <div style="max-width:560px;" class="fu">
+          <span class="overline" data-en="Medellín · La Chaux-de-Fonds" data-fr="Medellín · La Chaux-de-Fonds" data-es="Medellín · La Chaux-de-Fonds">Medellín · La Chaux-de-Fonds</span>
+          <div class="rule" style="margin-top:1.2rem;"></div>
+          <h2 class="headline" style="font-size:clamp(1.5rem,2.8vw,2.6rem);"
+            data-en="Two cities. One shared commitment to excellence."
+            data-fr="Deux villes. Un engagement commun envers l'excellence."
+            data-es="Dos ciudades. Un compromiso compartido con la excelencia.">
+            Two cities. One shared<br>commitment to excellence.
+          </h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+
+  <section class="cta-band">
+    <div class="wrap-sm fu" style="text-align:center;">
+      <span class="overline" data-en="Work With Us" data-fr="Travaillez avec nous" data-es="Trabaje con nosotros">Work With Us</span>
+      <div class="spacer"></div>
+      <h2 class="headline" style="font-size:clamp(1.6rem,3.2vw,2.8rem);"
+        data-en="We welcome inquiries from refineries, manufacturers and institutions."
+        data-fr="Nous accueillons les demandes des raffineries, fabricants et institutions."
+        data-es="Damos la bienvenida a consultas de refinerías, fabricantes e instituciones.">
+        We welcome inquiries from refineries,<br>manufacturers and institutions.
+      </h2>
+      <div class="spacer-lg"></div>
+      <button class="btn btn-solid" onclick="go('contact')"
+        data-en="Get in Touch" data-fr="Nous Contacter" data-es="Ponerse en Contacto">Get in Touch</button>
+    </div>
+  </section>
+
+</div><!-- /home -->
+
+<!-- ══════════════════════════════
+     L'ALLIANCE
+══════════════════════════════ -->
+
+<div id="page-alliance" class="page">
+  <div class="pg-hero">
+    <div class="pg-bg" style="background-image:url('IMG_0349.jpeg')"></div>
+    <div class="pg-overlay"></div>
+    <div class="pg-ct fu">
+      <span class="overline" data-en="L'Alliance" data-fr="L'Alliance" data-es="La Alianza">L'Alliance</span>
+      <div class="spacer"></div>
+      <h1 class="display" data-en="Born from two worlds." data-fr="Née de deux mondes." data-es="Nacida de dos mundos.">Born from<br>two worlds.</h1>
+    </div>
+  </div>
+
+  <section style="background:var(--black);">
+    <div class="wrap">
+      <div class="split">
+        <div class="fu">
+          <span class="overline" data-en="Our Story" data-fr="Notre Histoire" data-es="Nuestra Historia">Our Story</span>
+          <div class="rule" style="margin-top:1.2rem;"></div>
+          <h2 class="headline" data-en="An alliance built with intention." data-fr="Une alliance construite avec intention." data-es="Una alianza construida con intención.">An alliance built<br>with intention.</h2>
+          <div class="spacer"></div>
+          <p class="body"
+            data-en="South American Metal Alliance came together through years of trust, not opportunity. Our partners chose to build something that would endure — an institution rooted in the mineral wealth of Colombia and guided by the precision of Switzerland."
+            data-fr="South American Metal Alliance s'est formée au fil des années de confiance, pas par opportunité. Nos partenaires ont choisi de construire quelque chose qui durerait — une institution ancrée dans la richesse minérale de la Colombie et guidée par la précision de la Suisse."
+            data-es="South American Metal Alliance se formó a través de años de confianza, no de oportunidad. Nuestros socios eligieron construir algo que perdurara — una institución arraigada en la riqueza mineral de Colombia y guiada por la precisión de Suiza.">
+            South American Metal Alliance came together through years of trust, not opportunity. Our partners chose to build something that would endure — an institution rooted in the mineral wealth of Colombia and guided by the precision of Switzerland.
+          </p>
+          <div class="spacer"></div>
+          <p class="body"
+            data-en="From the mining regions of Colombia to the financial centres of Europe, we have built relationships that go beyond transactions. For us, every partnership begins with a conversation and is sustained by results."
+            data-fr="Des régions minières de Colombie aux centres financiers d'Europe, nous avons construit des relations qui vont au-delà des transactions. Pour nous, chaque partenariat commence par une conversation et se maintient grâce aux résultats."
+            data-es="Desde las regiones mineras de Colombia hasta los centros financieros de Europa, hemos construido relaciones que van más allá de las transacciones. Para nosotros, cada alianza comienza con una conversación y se sostiene con resultados.">
+            From the mining regions of Colombia to the financial centres of Europe, we have built relationships that go beyond transactions. For us, every partnership begins with a conversation and is sustained by results.
+          </p>
+        </div>
+        <div class="split-img fu d2">
+          <img src="IMG_0344.jpeg" alt="Office"
+               onerror="this.style.height='480px';this.style.background='#181818';this.style.display='block'">
+          <div class="split-img-frame"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--black-soft);border-top:1px solid var(--border-s);">
+    <div class="wrap">
+      <div class="fu">
+        <span class="overline" data-en="Our Values" data-fr="Nos Valeurs" data-es="Nuestros Valores">Our Values</span>
+        <div class="spacer"></div>
+        <h2 class="headline" data-en="The principles we work by." data-fr="Les principes qui guident notre travail." data-es="Los principios con los que trabajamos.">The principles we work by.</h2>
+      </div>
+      <div class="vals">
+        <div class="val fu d1"><div class="val-t" data-en="Sovereignty" data-fr="Souveraineté" data-es="Soberanía">Sovereignty</div><p class="val-p" data-en="We make our own decisions and hold ourselves to our own standards. No shortcuts, no compromises — because our partners deserve better." data-fr="Nous prenons nos propres décisions et nous nous tenons à nos propres standards. Pas de raccourcis, pas de compromis." data-es="Tomamos nuestras propias decisiones y nos regimos por nuestros propios estándares. Sin atajos, sin compromisos.">We make our own decisions and hold ourselves to our own standards. No shortcuts, no compromises — because our partners deserve better.</p></div>
+        <div class="val fu d2"><div class="val-t" data-en="Rigour" data-fr="Rigueur" data-es="Rigor">Rigour</div><p class="val-p" data-en="Every process is documented, every claim is backed by data. We take precision seriously because trust depends on it." data-fr="Chaque processus est documenté, chaque affirmation est soutenue par des données. Nous prenons la précision au sérieux car la confiance en dépend." data-es="Cada proceso está documentado, cada afirmación está respaldada por datos. Tomamos la precisión en serio porque la confianza depende de ella.">Every process is documented, every claim is backed by data. We take precision seriously because trust depends on it.</p></div>
+        <div class="val fu d1"><div class="val-t" data-en="Transparency" data-fr="Transparence" data-es="Transparencia">Transparency</div><p class="val-p" data-en="We believe the best partnerships are built on openness. Our traceability records are available to verified partners, always." data-fr="Nous croyons que les meilleures alliances sont construites sur l'ouverture. Nos dossiers de traçabilité sont disponibles pour les partenaires vérifiés, toujours." data-es="Creemos que las mejores alianzas se construyen sobre la apertura. Nuestros registros de trazabilidad están disponibles para socios verificados, siempre.">We believe the best partnerships are built on openness. Our traceability records are available to verified partners, always.</p></div>
+        <div class="val fu d2"><div class="val-t" data-en="Excellence" data-fr="Excellence" data-es="Excelencia">Excellence</div><p class="val-p" data-en="Swiss standards are our benchmark in everything — not just in documentation, but in how we communicate, how we deliver, and how we show up for our partners." data-fr="Les standards suisses sont notre référence en tout — pas seulement dans la documentation, mais dans la façon dont nous communiquons et livrons." data-es="Los estándares suizos son nuestro referente en todo — no solo en la documentación, sino en cómo nos comunicamos, entregamos y apoyamos a nuestros socios.">Swiss standards are our benchmark in everything — not just in documentation, but in how we communicate, how we deliver, and how we show up for our partners.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:0;">
+    <div class="cities">
+      <div class="city-p">
+        <div class="city-bg" style="background-image:url('IMG_0344.jpeg')"></div>
+        <div class="city-ov"></div>
+        <div class="city-ct fu">
+          <div class="city-nm">La Chaux-de-Fonds</div>
+          <div class="city-sub" data-en="Administrative Headquarters · Switzerland" data-fr="Siège Administratif · Suisse" data-es="Sede Administrativa · Suiza">Administrative Headquarters · Switzerland</div>
+        </div>
+      </div>
+      <div class="city-p">
+        <div class="city-bg" style="background-image:url('IMG_0347.jpeg')"></div>
+        <div class="city-ov"></div>
+        <div class="city-ct fu d2">
+          <div class="city-nm">Medellín</div>
+          <div class="city-sub" data-en="Legal Headquarters · Colombia" data-fr="Siège Légal · Colombie" data-es="Sede Legal · Colombia">Legal Headquarters · Colombia</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div><!-- /alliance -->
+
+<!-- ══════════════════════════════
+     ASSETS / ACTIFS
+══════════════════════════════ -->
+
+<div id="page-actifs" class="page">
+  <div class="pg-hero">
+    <div class="pg-bg" style="background-image:url('IMG_0354.jpeg')"></div>
+    <div class="pg-overlay"></div>
+    <div class="pg-ct fu">
+      <span class="overline" data-en="What We Offer" data-fr="Ce que nous offrons" data-es="Lo que ofrecemos">What We Offer</span>
+      <div class="spacer"></div>
+      <h1 class="display" data-en="Precious metals, carefully handled." data-fr="Métaux précieux, soigneusement traités." data-es="Metales preciosos, manejados con cuidado.">Precious metals,<br>carefully handled.</h1>
+    </div>
+  </div>
+  <section style="background:var(--black);padding:0;">
+    <div class="svc">
+      <div class="svc-ct fu">
+        <div class="svc-idx">01</div>
+        <div class="svc-t" data-en="Gold Export" data-fr="Exportation d'Or" data-es="Exportación de Oro">Gold Export</div>
+        <p class="svc-p" data-en="We export Colombian-origin gold to refineries, manufacturers, and jewellery houses around the world. Every shipment is RUCOM registered, ANM certified, and fully traceable from source to delivery." data-fr="Nous exportons de l'or d'origine colombienne vers des raffineries, fabricants et maisons de joaillerie. Chaque envoi est enregistré RUCOM, certifié ANM et entièrement traçable." data-es="Exportamos oro de origen colombiano a refinerías, fabricantes y casas de joyería de todo el mundo. Cada envío está registrado en RUCOM, certificado por la ANM y es completamente trazable.">We export Colombian-origin gold to refineries, manufacturers, and jewellery houses around the world. Every shipment is RUCOM registered, ANM certified, and fully traceable from source to delivery.</p>
+        <div class="tags"><span class="tag">RUCOM</span><span class="tag">ANM</span><span class="tag">Colombia Origin</span></div>
+      </div>
+      <div class="svc-img"><img src="IMG_0354.jpeg" alt="Gold" onerror="this.style.height='380px';this.style.background='#181818';this.style.display='block'"></div>
+    </div>
+    <div class="svc r">
+      <div class="svc-img"><img src="IMG_0342.jpeg" alt="Compliance" onerror="this.style.height='380px';this.style.background='#181818';this.style.display='block'"></div>
+      <div class="svc-ct fu">
+        <div class="svc-idx">02</div>
+        <div class="svc-t" data-en="Compliance & Documentation" data-fr="Conformité & Documentation" data-es="Cumplimiento & Documentación">Compliance & Documentation</div>
+        <p class="svc-p" data-en="We understand that our partners need certainty. That's why our anti-money laundering framework, legal registrations, and transaction documentation are always in order — so your team never has to ask twice." data-fr="Nous comprenons que nos partenaires ont besoin de certitude. C'est pourquoi notre cadre anti-blanchiment, nos enregistrements légaux et notre documentation sont toujours en ordre." data-es="Entendemos que nuestros socios necesitan certeza. Por eso nuestro marco antilavado, registros legales y documentación de transacciones están siempre en orden.">We understand that our partners need certainty. That's why our anti-money laundering framework, legal registrations, and transaction documentation are always in order — so your team never has to ask twice.</p>
+        <div class="tags"><span class="tag">SAGRILAFT</span><span class="tag">SIREL/UIAF</span><span class="tag">AML</span></div>
+      </div>
+    </div>
+    <div class="svc">
+      <div class="svc-ct fu">
+        <div class="svc-idx">03</div>
+        <div class="svc-t" data-en="International Trade" data-fr="Commerce International" data-es="Comercio Internacional">International Trade</div>
+        <p class="svc-p" data-en="As a registered Comercializadora Internacional, we operate within the full legal framework for Colombian precious metals exports — under DIAN and MINCIT oversight, through the VUCE platform." data-fr="En tant que Commercialisateur International enregistré, nous opérons dans le cadre légal complet des exportations colombiennes de métaux précieux — sous supervision DIAN et MINCIT." data-es="Como Comercializadora Internacional registrada, operamos dentro del marco legal completo para exportaciones de metales preciosos colombianos — bajo supervisión DIAN y MINCIT.">As a registered Comercializadora Internacional, we operate within the full legal framework for Colombian precious metals exports — under DIAN and MINCIT oversight, through the VUCE platform.</p>
+        <div class="tags"><span class="tag">C.I. VUCE</span><span class="tag">DIAN</span><span class="tag">MINCIT</span></div>
+      </div>
+      <div class="svc-img"><img src="IMG_0347.jpeg" alt="Trade" onerror="this.style.height='380px';this.style.background='#181818';this.style.display='block'"></div>
+    </div>
+  </section>
+  <section class="cta-band">
+    <div class="wrap-sm fu" style="text-align:center;">
+      <p class="pull"
+        data-en="Every gram we send carries a commitment — to origin, to integrity, and to the people <em>on both sides of the transaction.</em>"
+        data-fr="Chaque gramme que nous envoyons porte un engagement — envers l'origine, l'intégrité et les personnes <em>des deux côtés de la transaction.</em>"
+        data-es="Cada gramo que enviamos lleva un compromiso — con el origen, la integridad y las personas <em>a ambos lados de la transacción.</em>">
+        Every gram we send carries a commitment — to origin, to integrity, and to the people <em>on both sides of the transaction.</em>
+      </p>
+      <div class="spacer-lg"></div>
+      <button class="btn btn-solid" onclick="go('contact')"
+        data-en="Start a Conversation" data-fr="Commencer une Conversation" data-es="Iniciar una Conversación">Start a Conversation</button>
+    </div>
+  </section>
+</div><!-- /actifs -->
+
+<!-- ══════════════════════════════
+     ETHICS
+══════════════════════════════ -->
+
+<div id="page-ethique" class="page">
+  <div class="pg-hero">
+    <div class="pg-bg" style="background-image:url('IMG_0343.jpeg')"></div>
+    <div class="pg-overlay"></div>
+    <div class="pg-ct fu">
+      <span class="overline" data-en="Ethics & Governance" data-fr="Éthique & Gouvernance" data-es="Ética y Gobernanza">Ethics & Governance</span>
+      <div class="spacer"></div>
+      <h1 class="display" data-en="We believe responsible trade is the only trade worth doing." data-fr="Nous croyons que le commerce responsable est le seul commerce qui vaille." data-es="Creemos que el comercio responsable es el único comercio que vale la pena.">We believe responsible trade<br>is the only trade worth doing.</h1>
+    </div>
+  </div>
+  <section style="background:var(--black);">
+    <div class="wrap">
+      <div class="fu" style="max-width:640px;margin-bottom:0.5rem;">
+        <span class="overline" data-en="Our Framework" data-fr="Notre Cadre" data-es="Nuestro Marco">Our Framework</span>
+        <div class="rule" style="margin-top:1.2rem;"></div>
+        <p class="body"
+          data-en="Ethical practice isn't something we apply at the end of a process — it's built into how we work from the start. Our regulatory framework covers both Colombia and Switzerland, and we hold ourselves to the highest standard of both."
+          data-fr="La pratique éthique n'est pas quelque chose que nous appliquons à la fin d'un processus — elle est intégrée dans notre façon de travailler dès le début."
+          data-es="La práctica ética no es algo que aplicamos al final de un proceso — está integrada en nuestra forma de trabajar desde el principio. Nuestro marco regulatorio cubre tanto Colombia como Suiza.">
+          Ethical practice isn't something we apply at the end of a process — it's built into how we work from the start. Our regulatory framework covers both Colombia and Switzerland, and we hold ourselves to the highest standard of both.
+        </p>
+      </div>
+      <div class="comp-grid">
+        <div class="comp-c fu"><div class="comp-ico"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg></div><div class="comp-t">RUCOM</div><p class="comp-p" data-en="Registro Único de Comercializadores de Minerales. Every transaction we make is registered with Colombia's National Mining Agency, providing a clear and verifiable record." data-fr="Chaque transaction est enregistrée auprès de l'Agence Nationale Minière de Colombie, fournissant un dossier clair et vérifiable." data-es="Cada transacción está registrada ante la Agencia Nacional de Minería de Colombia, proporcionando un registro claro y verificable.">Registro Único de Comercializadores de Minerales. Every transaction is registered with Colombia's National Mining Agency, providing a clear and verifiable record.</p><div class="comp-cd">ANM · Colombia</div></div>
+        <div class="comp-c fu d1"><div class="comp-ico"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 010 3.75H5.625a1.875 1.875 0 010-3.75z"/></svg></div><div class="comp-t">SAGRILAFT</div><p class="comp-p" data-en="Our anti-money laundering and risk management framework isn't a policy document — it's a living part of how we operate every day." data-fr="Notre cadre de lutte contre le blanchiment n'est pas un document de politique — c'est une partie vivante de notre fonctionnement quotidien." data-es="Nuestro marco antilavado no es un documento de política — es una parte viva de cómo operamos cada día.">Our anti-money laundering and risk management framework isn't a policy document — it's a living part of how we operate every day.</p><div class="comp-cd">UIAF · Colombia</div></div>
+        <div class="comp-c fu d2"><div class="comp-ico"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.038 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.038-4.5-9S9.515 3 12 3"/></svg></div><div class="comp-t">SIREL / UIAF</div><p class="comp-p" data-en="We are registered with Colombia's Financial Intelligence Unit. Reporting obligations are met, without exception — because integrity cannot be selective." data-fr="Nous sommes enregistrés auprès de l'Unité de Renseignement Financier de Colombie. Les obligations de déclaration sont respectées, sans exception." data-es="Estamos registrados ante la Unidad de Inteligencia Financiera de Colombia. Las obligaciones de reporte se cumplen, sin excepción.">We are registered with Colombia's Financial Intelligence Unit. Reporting obligations are met, without exception — because integrity cannot be selective.</p><div class="comp-cd">SIREL · Colombia</div></div>
+        <div class="comp-c fu"><div class="comp-ico"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21"/></svg></div><div class="comp-t" data-en="Comercializadora Internacional" data-fr="Commercialisateur International" data-es="Comercializadora Internacional">Comercializadora Internacional</div><p class="comp-p" data-en="Registered as a C.I. through VUCE — Colombia's official single window for foreign trade. We operate with full authorization under DIAN and MINCIT." data-fr="Enregistrée comme C.I. via VUCE — le guichet unique officiel du commerce extérieur de Colombie." data-es="Registrada como C.I. a través de VUCE — la ventanilla única oficial de Colombia para el comercio exterior.">Registered as a C.I. through VUCE — Colombia's official single window for foreign trade. We operate with full authorization under DIAN and MINCIT.</p><div class="comp-cd">VUCE · DIAN · MINCIT</div></div>
+        <div class="comp-c fu d1"><div class="comp-ico"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25a3 3 0 013 3m3 0a6 6 0 01-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1121.75 8.25z"/></svg></div><div class="comp-t" data-en="Responsible Sourcing" data-fr="Approvisionnement Responsable" data-es="Abastecimiento Responsable">Responsible Sourcing</div><p class="comp-p" data-en="We work only with verified, legal sources. No conflict minerals, no grey channels — just clean, documented, origin-verified gold." data-fr="Nous travaillons uniquement avec des sources vérifiées et légales. Pas de minéraux de conflit, pas de canaux gris." data-es="Trabajamos únicamente con fuentes verificadas y legales. Sin minerales de conflicto, sin canales grises.">We work only with verified, legal sources. No conflict minerals, no grey channels — just clean, documented, origin-verified gold.</p><div class="comp-cd">Responsible Mining</div></div>
+        <div class="comp-c fu d2"><div class="comp-ico"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg></div><div class="comp-t" data-en="Full Documentation" data-fr="Documentation Complète" data-es="Documentación Completa">Full Documentation</div><p class="comp-p" data-en="A complete audit trail is maintained for every shipment. Verified partners can request access to documentation at any time — that's a commitment we don't take lightly." data-fr="Une piste d'audit complète est maintenue pour chaque envoi. Les partenaires vérifiés peuvent demander l'accès à la documentation à tout moment." data-es="Se mantiene un rastro de auditoría completo para cada envío. Los socios verificados pueden solicitar acceso a la documentación en cualquier momento.">A complete audit trail is maintained for every shipment. Verified partners can request access to documentation at any time.</p><div class="comp-cd">Full Audit Trail</div></div>
+      </div>
+    </div>
+  </section>
+  <section style="background:var(--black-soft);border-top:1px solid var(--border);">
+    <div class="wrap-sm fu">
+      <div class="rule cx"></div>
+      <p class="pull"
+        data-en="Trust is earned quietly — through consistency, through documentation, and through showing up <em>the same way, every time.</em>"
+        data-fr="La confiance se gagne silencieusement — par la constance, par la documentation, et en se montrant <em>de la même façon, à chaque fois.</em>"
+        data-es="La confianza se gana en silencio — a través de la constancia, la documentación, y mostrándose <em>de la misma manera, cada vez.</em>">
+        Trust is earned quietly — through consistency, through documentation, and through showing up <em>the same way, every time.</em>
+      </p>
+    </div>
+  </section>
+</div><!-- /ethique -->
+
+<!-- ══════════════════════════════
+     FOUNDERS
+══════════════════════════════ -->
+
+<div id="page-founders" class="page">
+  <div class="pg-hero">
+    <div class="pg-bg" style="background-image:url('IMG_0341.jpeg')"></div>
+    <div class="pg-overlay"></div>
+    <div class="pg-ct fu">
+      <span class="overline" data-en="The People Behind SAMA" data-fr="Les Personnes derrière SAMA" data-es="Las Personas detrás de SAMA">The People Behind SAMA</span>
+      <div class="spacer"></div>
+      <h1 class="display" data-en="Three partners. One conviction." data-fr="Trois partenaires. Une conviction." data-es="Tres socios. Una convicción.">Three partners.<br>One conviction.</h1>
+    </div>
+  </div>
+  <section style="background:var(--black);">
+    <div class="wrap">
+      <div class="fu" style="max-width:600px;margin-bottom:0.5rem;">
+        <span class="overline" data-en="The Team" data-fr="L'Équipe" data-es="El Equipo">The Team</span>
+        <div class="rule" style="margin-top:1.2rem;"></div>
+        <p class="body"
+          data-en="SAMA was brought to life by three people who share a deep respect for what precious metals represent — the work of communities, the wealth of a country, and the trust placed in those who handle it."
+          data-fr="SAMA a été créée par trois personnes qui partagent un profond respect pour ce que représentent les métaux précieux — le travail des communautés, la richesse d'un pays et la confiance placée en ceux qui les gèrent."
+          data-es="SAMA fue creada por tres personas que comparten un profundo respeto por lo que representan los metales preciosos — el trabajo de comunidades, la riqueza de un país y la confianza depositada en quienes los manejan.">
+          SAMA was brought to life by three people who share a deep respect for what precious metals represent — the work of communities, the wealth of a country, and the trust placed in those who handle it.
+        </p>
+      </div>
+      <div class="founders">
+        <div class="founder fu">
+          <span class="f-origin" data-en="Switzerland" data-fr="Suisse" data-es="Suiza">Switzerland</span>
+          <div class="f-name">Armin<br>Arnautovic</div>
+          <div class="f-role" data-en="Executive Direction & Global Strategy" data-fr="Direction Exécutive & Stratégie Globale" data-es="Dirección Ejecutiva & Estrategia Global">Executive Direction & Global Strategy</div>
+          <div class="f-div"></div>
+          <p class="f-q" data-en="&ldquo;SAMA is the meeting point of two great traditions — the rigour of Switzerland and the extraordinary mineral wealth of Colombia. That combination is rare, and we take it seriously.&rdquo;" data-fr="&ldquo;SAMA est le point de rencontre de deux grandes traditions — la rigueur de la Suisse et la richesse minérale extraordinaire de la Colombie.&rdquo;" data-es="&ldquo;SAMA es el punto de encuentro de dos grandes tradiciones — el rigor de Suiza y la extraordinaria riqueza mineral de Colombia.&rdquo;">&ldquo;SAMA is the meeting point of two great traditions — the rigour of Switzerland and the extraordinary mineral wealth of Colombia. That combination is rare, and we take it seriously.&rdquo;</p>
+        </div>
+        <div class="founder fu d2">
+          <span class="f-origin" data-en="Spain" data-fr="Espagne" data-es="España">Spain</span>
+          <div class="f-name">Fernando<br>Castiñeira Gil</div>
+          <div class="f-role" data-en="Operations & Transatlantic Investment" data-fr="Opérations & Investissement Transatlantique" data-es="Operaciones & Inversión Transatlántica">Operations & Transatlantic Investment</div>
+          <div class="f-div"></div>
+          <p class="f-q" data-en="&ldquo;The transatlantic connection we have built is something that took years of work and relationship. It's not something you can replicate overnight — and that's exactly what makes it valuable.&rdquo;" data-fr="&ldquo;La connexion transatlantique que nous avons construite est le résultat de années de travail et de relation. Ce n'est pas quelque chose qu'on peut reproduire du jour au lendemain.&rdquo;" data-es="&ldquo;La conexión transatlántica que hemos construido es el resultado de años de trabajo y relación. No es algo que se pueda replicar de la noche a la mañana.&rdquo;">&ldquo;The transatlantic connection we have built took years of work and relationship. It&rsquo;s not something you can replicate overnight — and that&rsquo;s exactly what makes it valuable.&rdquo;</p>
+        </div>
+        <div class="founder fu d3">
+          <span class="f-origin" data-en="Colombia" data-fr="Colombie" data-es="Colombia">Colombia</span>
+          <div class="f-name">Evelyn<br>Patiño Laverde</div>
+          <div class="f-role" data-en="Legal Representative & Compliance" data-fr="Représentante Légale & Conformité" data-es="Representante Legal & Cumplimiento">Legal Representative & Compliance</div>
+          <div class="f-div"></div>
+          <p class="f-q" data-en="&ldquo;Behind every export is a community that worked for it. Our job is to make sure that effort is honoured — with transparency, with legal protection, and with pride in what Colombia produces.&rdquo;" data-fr="&ldquo;Derrière chaque exportation se trouve une communauté qui a travaillé pour cela. Notre travail est de s'assurer que cet effort est honoré.&rdquo;" data-es="&ldquo;Detrás de cada exportación hay una comunidad que trabajó para ello. Nuestro trabajo es asegurarnos de que ese esfuerzo sea honrado — con transparencia, protección legal y orgullo.&rdquo;">&ldquo;Behind every export is a community that worked for it. Our job is to make sure that effort is honoured — with transparency, with legal protection, and with pride in what Colombia produces.&rdquo;</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div><!-- /founders -->
+
+<!-- ══════════════════════════════
+     CONTACT
+══════════════════════════════ -->
+
+<div id="page-contact" class="page">
+  <div class="pg-hero" style="height:44vh;min-height:320px;">
+    <div class="pg-bg" style="background-image:url('IMG_0342.jpeg')"></div>
+    <div class="pg-overlay"></div>
+    <div class="pg-ct fu">
+      <span class="overline" data-en="Get in Touch" data-fr="Prendre Contact" data-es="Contacto">Get in Touch</span>
+      <div class="spacer"></div>
+      <h1 class="display" style="font-size:clamp(2rem,4vw,3.8rem);"
+        data-en="Let's start a conversation." data-fr="Commençons une conversation." data-es="Empecemos una conversación.">Let's start<br>a conversation.</h1>
+    </div>
+  </div>
+  <section style="background:var(--black);">
+    <div class="wrap">
+      <div class="contact-g">
+        <div class="fu">
+          <span class="overline" data-en="Partnerships" data-fr="Partenariats" data-es="Alianzas">Partnerships</span>
+          <div class="rule" style="margin-top:1.2rem;"></div>
+          <p class="body"
+            data-en="We work with refineries, manufacturers and institutions that share our commitment to responsible, traceable trade. If that sounds like your organisation, we'd be glad to hear from you."
+            data-fr="Nous travaillons avec des raffineries, des fabricants et des institutions qui partagent notre engagement envers un commerce responsable et traçable. Si cela ressemble à votre organisation, nous serions ravis de vous entendre."
+            data-es="Trabajamos con refinerías, fabricantes e instituciones que comparten nuestro compromiso con el comercio responsable y trazable. Si eso suena como su organización, nos complacería escucharle.">
+            We work with refineries, manufacturers and institutions that share our commitment to responsible, traceable trade. If that sounds like your organisation, we'd be glad to hear from you.
+          </p>
+          <div class="locs">
+            <div class="loc">
+              <div class="loc-city">Medellín, Colombia</div>
+              <div class="loc-d" data-en="Calle 50 # 51-24, La Candelaria" data-fr="Calle 50 # 51-24, La Candelaria" data-es="Calle 50 # 51-24, La Candelaria">Calle 50 # 51-24, La Candelaria</div>
+              <div class="loc-d"><a href="mailto:info@southamericanmetalalliance.com">info@southamericanmetalalliance.com</a></div>
+            </div>
+            <div class="loc">
+              <div class="loc-city">La Chaux-de-Fonds, Switzerland</div>
+              <div class="loc-d" data-en="Administrative Office" data-fr="Bureau Administratif" data-es="Oficina Administrativa">Administrative Office</div>
+            </div>
+          </div>
+        </div>
+        <div class="form-box fu d2">
+          <div class="fg"><label class="fl" data-en="Full Name *" data-fr="Nom Complet *" data-es="Nombre Completo *">Full Name *</label><input type="text" class="fi" placeholder="Your full name"></div>
+          <div class="fg"><label class="fl" data-en="Company *" data-fr="Société *" data-es="Empresa *">Company *</label><input type="text" class="fi" placeholder="Company name"></div>
+          <div class="fg"><label class="fl" data-en="Country *" data-fr="Pays *" data-es="País *">Country *</label><input type="text" class="fi" placeholder="Country"></div>
+          <div class="fg"><label class="fl" data-en="Email *" data-fr="Email *" data-es="Email *">Email *</label><input type="email" class="fi" placeholder="your@company.com"></div>
+          <div class="fg">
+            <label class="fl" data-en="How can we help?" data-fr="Comment pouvons-nous vous aider?" data-es="¿En qué podemos ayudarle?">How can we help?</label>
+            <select class="fsel">
+              <option data-en="Select..." data-fr="Sélectionner..." data-es="Seleccionar...">Select...</option>
+              <option data-en="Gold purchase inquiry" data-fr="Demande d'achat d'or" data-es="Consulta de compra de oro">Gold purchase inquiry</option>
+              <option data-en="Partnership proposal" data-fr="Proposition de partenariat" data-es="Propuesta de alianza">Partnership proposal</option>
+              <option data-en="Compliance verification" data-fr="Vérification de conformité" data-es="Verificación de cumplimiento">Compliance verification</option>
+              <option data-en="Press inquiry" data-fr="Demande presse" data-es="Consulta de prensa">Press inquiry</option>
+              <option data-en="Other" data-fr="Autre" data-es="Otro">Other</option>
+            </select>
+          </div>
+          <div class="fg"><label class="fl" data-en="Message *" data-fr="Message *" data-es="Mensaje *">Message *</label><textarea class="fta" placeholder="Tell us about your needs"></textarea></div>
+          <button class="fsub" onclick="sendForm(this)"
+            data-en="Send Message" data-fr="Envoyer le Message" data-es="Enviar Mensaje">Send Message</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div><!-- /contact -->
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="wrap">
+    <div class="ft-g">
+      <div>
+        <span class="ft-logo" style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:400;letter-spacing:0.45em;color:var(--white);display:block;margin-bottom:1.1rem;">S·A·M·A</span>
+        <div class="ft-tag">L'Excellence Suisse · La Richesse Colombienne</div>
+      </div>
+      <div>
+        <div class="ft-ht" data-en="Navigation" data-fr="Navigation" data-es="Navegación">Navigation</div>
+        <ul class="ft-ul">
+          <li><a onclick="go('home')" data-en="Home" data-fr="Accueil" data-es="Inicio">Home</a></li>
+          <li><a onclick="go('alliance')" data-en="L'Alliance" data-fr="L'Alliance" data-es="La Alianza">L'Alliance</a></li>
+          <li><a onclick="go('actifs')" data-en="Assets" data-fr="Actifs" data-es="Activos">Assets</a></li>
+          <li><a onclick="go('ethique')" data-en="Ethics" data-fr="Éthique" data-es="Ética">Ethics</a></li>
+          <li><a onclick="go('founders')" data-en="Founders" data-fr="Fondateurs" data-es="Fundadores">Founders</a></li>
+          <li><a onclick="go('contact')" data-en="Contact" data-fr="Contact" data-es="Contacto">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="ft-ht" data-en="Contact" data-fr="Contact" data-es="Contacto">Contact</div>
+        <div class="ft-cl">Medellín, Colombia</div>
+        <div class="ft-cl">La Chaux-de-Fonds, Switzerland</div>
+        <div class="ft-cl" style="margin-top:0.7rem;"><a href="mailto:info@southamericanmetalalliance.com">info@southamericanmetalalliance.com</a></div>
+      </div>
+    </div>
+    <div class="ft-bot">
+      <div class="ft-leg">© 2026 South American Metal Alliance S.A.S.</div>
+      <div class="ft-leg">southamericanmetalalliance.com</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // NAV SCROLL
+  window.addEventListener("scroll",()=>{
+    document.getElementById("nav").classList.toggle("dark", window.scrollY > 50);
+  });
+
+  // PAGES
+  function go(id){
+    document.querySelectorAll(".page").forEach(p=>p.classList.remove("on"));
+    const pg = document.getElementById("page-"+id);
+    if(pg){ pg.classList.add("on"); window.scrollTo({top:0,behavior:"smooth"}); setTimeout(initFU,80); }
+  }
+
+  // MOBILE
+  function toggleMob(){ document.getElementById("mobNav").classList.toggle("on"); }
+
+  // LANGUAGE
+  let lang = "en";
+  function setLang(l){
+    lang = l;
+    ["EN","FR","ES"].forEach(x=>document.getElementById("b"+x).classList.toggle("on",x.toLowerCase()===l));
+    document.querySelectorAll("[data-"+l+"]").forEach(el=>{
+      const v = el.getAttribute("data-"+l);
+      if(v !== null) el.innerHTML = v;
+    });
+  }
+
+  // FADE UP
+  function initFU(){
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("on"); obs.unobserve(e.target); }});
+    },{threshold:0.06, rootMargin:"0px 0px -28px 0px"});
+    document.querySelectorAll(".fu").forEach(el=>{ el.classList.remove("on"); obs.observe(el); });
+  }
+
+  // FORM
+  function sendForm(btn){
+    const msg = {en:"Message sent — we'll be in touch.",fr:"Message envoyé — nous vous contacterons.",es:"Mensaje enviado — nos pondremos en contacto."};
+    btn.textContent = lang==="en"?"Sending...":lang==="fr"?"Envoi...":"Enviando...";
+    btn.disabled=true;
+    setTimeout(()=>{ btn.textContent=msg[lang]; btn.style.background="#2a4a2a"; btn.style.color="#fff"; },1500);
+  }
+
+  // INIT
+  document.addEventListener("DOMContentLoaded",()=>{
+    document.querySelectorAll("#page-home .fu").forEach(el=>el.classList.add("on"));
+    initFU();
+  });
+</script>
+
+</body>
+</html>
