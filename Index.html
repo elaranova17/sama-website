@@ -8,7 +8,7 @@
   <meta name="description" content="South American Metal Alliance — Institutional precious metals export. Swiss standards. Colombian origin. Full traceability.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500;1,600&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
   <style>
     :root {
       --gold: #DAAF57;
@@ -34,10 +34,10 @@
 
 ```
 /* TYPE */
-.display{font-family:"Cormorant Garamond",serif;font-size:clamp(3rem,6.5vw,6rem);font-weight:300;line-height:1.06;letter-spacing:-0.01em;}
-.headline{font-family:"Cormorant Garamond",serif;font-size:clamp(2rem,3.5vw,3.4rem);font-weight:400;line-height:1.18;}
+.display{font-family:"Playfair Display",serif;font-size:clamp(3rem,6.5vw,6.2rem);font-weight:400;font-style:italic;line-height:1.08;letter-spacing:0em;color:#F4F0E8;}
+.headline{font-family:"Playfair Display",serif;font-size:clamp(2.2rem,3.8vw,3.8rem);font-weight:400;font-style:italic;line-height:1.18;color:#F4F0E8;}
 .overline{font-size:0.58rem;font-weight:400;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);}
-.body{font-size:clamp(1rem,1.3vw,1.1rem);font-weight:300;line-height:1.95;color:var(--text-body);}
+.body{font-size:clamp(1.05rem,1.4vw,1.2rem);font-weight:300;line-height:1.95;color:var(--text-body);}
 .caption{font-size:0.72rem;font-weight:300;color:var(--text-muted);letter-spacing:0.04em;}
 
 /* NAV */
@@ -75,8 +75,8 @@ nav.dark .nav-logo img{height:29px;}
 .hero-fade{position:absolute;inset:0;background:linear-gradient(to bottom, rgba(15,15,15,0.1) 0%, transparent 30%, rgba(15,15,15,0.5) 72%, rgba(15,15,15,1) 100%);}
 .hero-body{position:relative;z-index:2;text-align:center;padding:0 2rem;animation:rise 1.8s var(--ease) both;}
 @keyframes rise{from{opacity:0;transform:translateY(26px);}to{opacity:1;transform:translateY(0);}}
-.hero-monogram{font-family:"Cormorant Garamond",serif;font-size:clamp(1.2rem,2.2vw,1.8rem);font-weight:400;letter-spacing:0.55em;color:var(--white);margin-bottom:0.9rem;animation:rise 1.8s var(--ease) 0.2s both;}
-.hero-tagline{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(1.05rem,1.9vw,1.35rem);font-weight:300;letter-spacing:0.08em;color:var(--gold);margin-bottom:2.6rem;animation:rise 1.8s var(--ease) 0.38s both;}
+.hero-monogram{font-family:"Cormorant Garamond",serif;font-size:clamp(1.4rem,2.5vw,2.2rem);font-weight:400;letter-spacing:0.55em;color:var(--white);margin-bottom:0.9rem;animation:rise 1.8s var(--ease) 0.2s both;}
+.hero-tagline{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(1.2rem,2.1vw,1.55rem);font-weight:300;letter-spacing:0.08em;color:var(--gold);margin-bottom:2.6rem;animation:rise 1.8s var(--ease) 0.38s both;}
 .hero-rule{width:44px;height:1px;background:var(--gold);margin:0 auto 2.6rem;animation:rise 1.8s var(--ease) 0.5s both;}
 .hero-btn{display:inline-block;font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--white);border:1px solid rgba(218,175,87,0.4);padding:0.9rem 2.4rem;cursor:pointer;background:transparent;transition:all 0.4s var(--ease);animation:rise 1.8s var(--ease) 0.65s both;}
 .hero-btn:hover{background:var(--gold);border-color:var(--gold);color:var(--black);}
@@ -107,7 +107,7 @@ section{padding:clamp(4.5rem,9vw,8rem) 0;}
 .stats-row{display:grid;grid-template-columns:repeat(3,1fr);}
 .stat{text-align:center;padding:2rem 1.5rem;border-right:1px solid var(--border-s);}
 .stat:last-child{border-right:none;}
-.stat-val{font-family:"Cormorant Garamond",serif;font-size:clamp(2rem,4vw,3.5rem);font-weight:300;color:var(--gold);letter-spacing:-0.02em;line-height:1;display:block;margin-bottom:0.6rem;}
+.stat-val{font-family:"Playfair Display",serif;font-size:clamp(2rem,4vw,3.5rem);font-weight:300;color:var(--gold);letter-spacing:-0.02em;line-height:1;display:block;margin-bottom:0.6rem;}
 .stat-lbl{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-muted);}
 
 /* ── CARDS GRID ── */
@@ -117,7 +117,7 @@ section{padding:clamp(4.5rem,9vw,8rem) 0;}
 .card:hover{background:rgba(218,175,87,0.025);}
 .card:hover::before{transform:scaleX(1);}
 .card-n{font-family:"Cormorant Garamond",serif;font-size:0.72rem;color:var(--gold);opacity:0.45;letter-spacing:0.2em;display:block;margin-bottom:1.6rem;}
-.card-t{font-family:"Cormorant Garamond",serif;font-size:1.25rem;font-weight:500;color:var(--white);margin-bottom:0.8rem;}
+.card-t{font-family:"Cormorant Garamond",serif;font-size:1.5rem;font-weight:500;color:var(--white);margin-bottom:0.8rem;}
 .card-p{font-size:0.85rem;line-height:1.82;color:rgba(255,255,255,0.4);}
 
 /* ── CTA BAND ── */
@@ -157,8 +157,8 @@ section{padding:clamp(4.5rem,9vw,8rem) 0;}
 .svc.r .svc-img{order:-1;}
 .svc-img img{width:100%;height:380px;object-fit:cover;display:block;}
 .svc-ct{background:var(--black-card);padding:3.5rem 4rem;display:flex;flex-direction:column;justify-content:center;}
-.svc-idx{font-family:"Cormorant Garamond",serif;font-size:3rem;font-weight:300;color:rgba(218,175,87,0.1);line-height:1;margin-bottom:0.6rem;}
-.svc-t{font-family:"Cormorant Garamond",serif;font-size:1.65rem;font-weight:400;color:var(--white);margin-bottom:1rem;}
+.svc-idx{font-family:"Playfair Display",serif;font-size:3rem;font-weight:300;color:rgba(218,175,87,0.1);line-height:1;margin-bottom:0.6rem;}
+.svc-t{font-family:"Cormorant Garamond",serif;font-size:2rem;font-weight:400;color:var(--white);margin-bottom:1rem;}
 .svc-p{font-size:0.92rem;color:rgba(255,255,255,0.48);line-height:1.9;margin-bottom:1.8rem;}
 .tags{display:flex;flex-wrap:wrap;gap:0.4rem;}
 .tag{font-size:0.56rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(218,175,87,0.2);padding:0.26rem 0.65rem;}
@@ -169,16 +169,16 @@ section{padding:clamp(4.5rem,9vw,8rem) 0;}
 .comp-c:hover{background:rgba(218,175,87,0.03);}
 .comp-ico{width:32px;height:32px;border:1px solid rgba(218,175,87,0.28);display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;}
 .comp-ico svg{width:14px;height:14px;stroke:var(--gold);fill:none;stroke-width:1.5;}
-.comp-t{font-family:"Cormorant Garamond",serif;font-size:1.15rem;font-weight:500;color:var(--white);margin-bottom:0.6rem;}
+.comp-t{font-family:"Cormorant Garamond",serif;font-size:1.35rem;font-weight:500;color:var(--white);margin-bottom:0.6rem;}
 .comp-p{font-size:0.78rem;color:rgba(255,255,255,0.4);line-height:1.85;}
-.comp-cd{margin-top:1rem;font-size:0.56rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(218,175,87,0.5);}
+.comp-cd{margin-top:1rem;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(218,175,87,0.5);}
 
 /* ── FOUNDERS ── */
 .founders{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border-s);margin-top:3.5rem;}
 .founder{background:var(--black-card);padding:3rem 2.4rem;transition:background 0.4s;}
 .founder:hover{background:rgba(218,175,87,0.025);}
 .f-origin{font-size:0.56rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.3rem;display:block;}
-.f-name{font-family:"Cormorant Garamond",serif;font-size:1.5rem;font-weight:400;color:var(--white);line-height:1.2;margin-bottom:0.25rem;}
+.f-name{font-family:"Cormorant Garamond",serif;font-size:1.8rem;font-weight:400;color:var(--white);line-height:1.2;margin-bottom:0.25rem;}
 .f-role{font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-muted);margin-bottom:1.4rem;}
 .f-div{width:26px;height:1px;background:rgba(218,175,87,0.3);margin-bottom:1.4rem;}
 .f-q{font-family:"Cormorant Garamond",serif;font-size:0.95rem;font-style:italic;color:rgba(255,255,255,0.48);line-height:1.75;}
@@ -193,7 +193,7 @@ section{padding:clamp(4.5rem,9vw,8rem) 0;}
 .loc-d a:hover{opacity:0.7;}
 .form-box{background:var(--black-card);border:1px solid var(--border-s);padding:3rem;}
 .fg{margin-bottom:1.5rem;}
-.fl{display:block;font-size:0.56rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--text-muted);margin-bottom:0.5rem;}
+.fl{display:block;font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-muted);margin-bottom:0.5rem;}
 .fi,.fsel,.fta{width:100%;background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,0.09);padding:0.65rem 0;font-family:"Open Sans",sans-serif;font-size:0.83rem;font-weight:300;color:var(--white);outline:none;transition:border-color 0.3s;-webkit-appearance:none;}
 .fsel{cursor:pointer;}
 .fsel option{background:var(--black-soft);color:var(--white);}
@@ -212,7 +212,7 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
 .ft-g{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:3rem;margin-bottom:2.8rem;}
 .ft-logo{height:28px;display:block;margin-bottom:1.1rem;}
 .ft-tag{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:0.82rem;color:rgba(255,255,255,0.28);margin-bottom:0;}
-.ft-ht{font-size:0.56rem;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.ft-ht{font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
 .ft-ul{list-style:none;display:flex;flex-direction:column;gap:0.5rem;}
 .ft-ul a{font-size:0.76rem;color:var(--text-muted);text-decoration:none;cursor:pointer;transition:color 0.3s;}
 .ft-ul a:hover{color:var(--white);}
@@ -227,33 +227,91 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
 .fu.d1{transition-delay:0.1s;}.fu.d2{transition-delay:0.2s;}.fu.d3{transition-delay:0.32s;}
 
 /* ── RESPONSIVE ── */
-@media(max-width:1024px){
-  .cards{grid-template-columns:1fr 1fr;}
-  .founders{grid-template-columns:1fr;}
-  .split,.contact-g{grid-template-columns:1fr;gap:2.8rem;}
-  .split-img img,.al-img img{height:340px;}
-  .cities{grid-template-columns:1fr;height:auto;}
-  .city-p{min-height:280px;}
-  .svc{grid-template-columns:1fr;}.svc.r .svc-img{order:0;}
-  .svc-img img{height:260px;}
-  .comp-grid{grid-template-columns:1fr 1fr;}
-  .vals{grid-template-columns:1fr;}
-  .ft-g{grid-template-columns:1fr 1fr;gap:2rem;}
-}
-@media(max-width:768px){
-  .nav-center{display:none;}.ham{display:flex;}
-  .stats-row{grid-template-columns:1fr;}
-  .stat{border-right:none;border-bottom:1px solid var(--border-s);}
-  .stat:last-child{border-bottom:none;}
-  .cards{grid-template-columns:1fr;}
-  .comp-grid{grid-template-columns:1fr;}
-  .form-box{padding:1.8rem;}
-  .ft-g{grid-template-columns:1fr;gap:1.8rem;}
-  .ft-bot{flex-direction:column;gap:0.6rem;}
-}
+/* ── TABLET 1024px ── */
 ```
 
-  </style>
+@media(max-width:1024px){
+.cards{grid-template-columns:1fr 1fr;}
+.founders{grid-template-columns:1fr 1fr;}
+.split,.contact-g{grid-template-columns:1fr;gap:2.5rem;}
+.split-img img{height:360px;}
+.cities{grid-template-columns:1fr;height:auto;}
+.city-p{min-height:300px;}
+.svc{grid-template-columns:1fr;}
+.svc.r .svc-img{order:0;}
+.svc-img img{height:280px;}
+.svc-ct{padding:2.5rem 2rem;}
+.comp-grid{grid-template-columns:1fr 1fr;}
+.vals{grid-template-columns:1fr 1fr;}
+.ft-g{grid-template-columns:1fr 1fr;gap:2rem;}
+.pg-hero{height:50vh;min-height:380px;}
+}
+
+/* ── MOBILE 768px ── */
+@media(max-width:768px){
+.nav-center{display:none;}
+.ham{display:flex;}
+#sama-nav{padding:0 5vw;height:64px;}
+#sama-nav.dark{height:56px;}
+.nav-logo-txt{font-size:0.9rem;letter-spacing:0.3em;}
+.s-hero{height:100vh;min-height:580px;}
+.hero-body{padding:0 1.5rem;}
+.hero-btn{padding:0.8rem 1.8rem;font-size:0.58rem;}
+.pg-hero{height:45vh;min-height:320px;padding-bottom:3rem;}
+.pg-ct .display{font-size:clamp(2rem,8vw,3rem);}
+.s-section{padding:3.5rem 0;}
+.stats-row{grid-template-columns:1fr;}
+.stat{border-right:none;border-bottom:1px solid rgba(255,255,255,0.06);padding:1.5rem;}
+.stat:last-child{border-bottom:none;}
+.stat-val{font-size:2.5rem;}
+.cards{grid-template-columns:1fr;}
+.card{padding:2rem 1.5rem;}
+.split{grid-template-columns:1fr;gap:2rem;}
+.split-img img{height:260px;}
+.split-img-frame{display:none;}
+.svc{grid-template-columns:1fr;}
+.svc.r .svc-img{order:0;}
+.svc-img img{height:240px;}
+.svc-ct{padding:2rem 1.5rem;}
+.svc-t{font-size:1.6rem;}
+.comp-grid{grid-template-columns:1fr;}
+.comp-c{padding:2rem 1.5rem;}
+.vals{grid-template-columns:1fr;gap:1.8rem;}
+.cities{grid-template-columns:1fr;height:auto;}
+.city-p{min-height:260px;padding:2rem;}
+.editorial-band{height:360px;}
+.founders{grid-template-columns:1fr;}
+.founder{padding:2rem 1.5rem;}
+.f-name{font-size:1.5rem;}
+.contact-g{grid-template-columns:1fr;gap:2.5rem;}
+.form-box{padding:1.8rem 1.5rem;}
+.locs{margin-top:1.5rem;}
+.ft-g{grid-template-columns:1fr;gap:1.8rem;}
+.ft-bot{flex-direction:column;gap:0.6rem;text-align:center;}
+.s-footer{padding:2.5rem 0 1.5rem;}
+.headline{font-size:clamp(1.8rem,6vw,2.8rem);}
+.display{font-size:clamp(2.2rem,7vw,3.5rem);}
+.pull{font-size:clamp(1.2rem,4.5vw,1.8rem);}
+}
+
+/* ── SMALL MOBILE 480px ── */
+@media(max-width:480px){
+.headline{font-size:clamp(1.6rem,7vw,2.2rem);}
+.display{font-size:clamp(1.8rem,8vw,2.8rem);}
+.hero-monogram{font-size:1rem;letter-spacing:0.3em;}
+.hero-tagline{font-size:1rem;}
+.cards{grid-template-columns:1fr;}
+.svc-ct{padding:1.8rem 1.2rem;}
+.comp-c{padding:1.5rem 1.2rem;}
+.form-box{padding:1.5rem 1.2rem;}
+.wrap{padding:0 4vw;}
+.pg-hero{height:40vh;min-height:280px;}
+.split-img img{height:220px;}
+.stat-val{font-size:2rem;}
+.nav-logo-txt{font-size:0.82rem;}
+}
+</style>
+
 </head>
 <body>
 
@@ -261,7 +319,7 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
 
 <nav id="nav">
   <div class="nav-logo" onclick="go('home')">
-    <span style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:400;letter-spacing:0.45em;color:var(--white);text-transform:uppercase;">S·A·M·A</span>
+    <span style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:400;letter-spacing:0.35em;color:#F4F0E8;text-transform:uppercase;">S·A·M·A</span>
   </div>
   <ul class="nav-center">
     <li><a onclick="go('alliance')" data-en="L'Alliance" data-fr="L'Alliance" data-es="La Alianza">L'Alliance</a></li>
@@ -354,7 +412,7 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
   <section class="stats-band">
     <div class="wrap">
       <div class="stats-row">
-        <div class="stat fu"><span class="stat-val">$250M</span><span class="stat-lbl" data-en="Initial Capital" data-fr="Capital Initial" data-es="Capital Inicial">Initial Capital</span></div>
+        <div class="stat fu"><span class="stat-val">100%</span><span class="stat-lbl" data-en="Legal Compliance" data-fr="Conformité Légale" data-es="Cumplimiento Legal">Legal Compliance</span></div>
         <div class="stat fu d1"><span class="stat-val">100%</span><span class="stat-lbl" data-en="Traced, Every Gram" data-fr="Tracé, Chaque Gramme" data-es="Trazado, Cada Gramo">Traced, Every Gram</span></div>
         <div class="stat fu d2"><span class="stat-val">2</span><span class="stat-lbl" data-en="Continents, One Alliance" data-fr="Continents, Une Alliance" data-es="Continentes, Una Alianza">Continents, One Alliance</span></div>
       </div>
@@ -382,7 +440,7 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
   <!-- EDITORIAL FULLWIDTH IMAGE with text overlay -->
 
   <section style="padding:0;position:relative;height:520px;overflow:hidden;">
-    <div style="position:absolute;inset:0;background-image:url('IMG_0371.jpeg');background-size:cover;background-position:center 40%;opacity:0.5;"></div>
+    <div style="position:absolute;inset:0;background-image:url('IMG_0371.jpeg');background-size:cover;background-position:center 30%;opacity:0.55;"></div>
     <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(15,15,15,0.92) 0%,rgba(15,15,15,0.5) 55%,rgba(15,15,15,0.15) 100%);"></div>
     <div style="position:relative;z-index:2;height:100%;display:flex;align-items:center;">
       <div class="wrap">
@@ -426,7 +484,7 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
 
 <div id="page-alliance" class="page">
   <div class="pg-hero">
-    <div class="pg-bg" style="background-image:url('IMG_0376.jpeg')"></div>
+    <div class="pg-bg" style="background-size:cover;background-position:center;background-image:url('IMG_0376.jpeg');opacity:1;"></div>
     <div class="pg-overlay"></div>
     <div class="pg-ct fu">
       <span class="overline" data-en="L'Alliance" data-fr="L'Alliance" data-es="La Alianza">L'Alliance</span>
@@ -510,7 +568,7 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
 
 <div id="page-actifs" class="page">
   <div class="pg-hero">
-    <div class="pg-bg" style="background-image:url('IMG_0372.jpeg')"></div>
+    <div class="pg-bg" style="background-size:cover;background-position:center;background-image:url('IMG_0372.jpeg')"></div>
     <div class="pg-overlay"></div>
     <div class="pg-ct fu">
       <span class="overline" data-en="What We Offer" data-fr="Ce que nous offrons" data-es="Lo que ofrecemos">What We Offer</span>
@@ -526,10 +584,10 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
         <p class="svc-p" data-en="We export Colombian-origin gold to refineries, manufacturers, and jewellery houses around the world. Every shipment is RUCOM registered, ANM certified, and fully traceable from source to delivery." data-fr="Nous exportons de l'or d'origine colombienne vers des raffineries, fabricants et maisons de joaillerie. Chaque envoi est enregistré RUCOM, certifié ANM et entièrement traçable." data-es="Exportamos oro de origen colombiano a refinerías, fabricantes y casas de joyería de todo el mundo. Cada envío está registrado en RUCOM, certificado por la ANM y es completamente trazable.">We export Colombian-origin gold to refineries, manufacturers, and jewellery houses around the world. Every shipment is RUCOM registered, ANM certified, and fully traceable from source to delivery.</p>
         <div class="tags"><span class="tag">RUCOM</span><span class="tag">ANM</span><span class="tag">Colombia Origin</span></div>
       </div>
-      <div class="svc-img"><img src="IMG_0372.jpeg" alt="Gold bars" onerror="this.style.height='380px';this.style.background='#181818';this.style.display='block'"></div>
+      <div class="svc-img"><img src="IMG_0372.jpeg" alt="Gold bars" onerror="this.style.background='#1a1a1a';this.style.height='380px';this.style.display='block'" onerror="this.style.height='380px';this.style.background='#181818';this.style.display='block'"></div>
     </div>
     <div class="svc r">
-      <div class="svc-img"><img src="IMG_0373.jpeg" alt="Compliance documentation" onerror="this.style.height='380px';this.style.background='#181818';this.style.display='block'"></div>
+      <div class="svc-img"><img src="IMG_0373.jpeg" alt="Compliance documentation" onerror="this.style.background='#1a1a1a';this.style.height='380px';this.style.display='block'" onerror="this.style.height='380px';this.style.background='#181818';this.style.display='block'"></div>
       <div class="svc-ct fu">
         <div class="svc-idx">02</div>
         <div class="svc-t" data-en="Compliance & Documentation" data-fr="Conformité & Documentation" data-es="Cumplimiento & Documentación">Compliance & Documentation</div>
@@ -544,7 +602,7 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
         <p class="svc-p" data-en="As a registered Comercializadora Internacional, we operate within the full legal framework for Colombian precious metals exports — under DIAN and MINCIT oversight, through the VUCE platform." data-fr="En tant que Commercialisateur International enregistré, nous opérons dans le cadre légal complet des exportations colombiennes de métaux précieux — sous supervision DIAN et MINCIT." data-es="Como Comercializadora Internacional registrada, operamos dentro del marco legal completo para exportaciones de metales preciosos colombianos — bajo supervisión DIAN y MINCIT.">As a registered Comercializadora Internacional, we operate within the full legal framework for Colombian precious metals exports — under DIAN and MINCIT oversight, through the VUCE platform.</p>
         <div class="tags"><span class="tag">C.I. VUCE</span><span class="tag">DIAN</span><span class="tag">MINCIT</span></div>
       </div>
-      <div class="svc-img"><img src="IMG_0374.jpeg" alt="International trade" onerror="this.style.height='380px';this.style.background='#181818';this.style.display='block'"></div>
+      <div class="svc-img"><img src="IMG_0374.jpeg" alt="International trade" onerror="this.style.background='#1a1a1a';this.style.height='380px';this.style.display='block'" onerror="this.style.height='380px';this.style.background='#181818';this.style.display='block'"></div>
     </div>
   </section>
   <section class="cta-band">
@@ -568,7 +626,7 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
 
 <div id="page-ethique" class="page">
   <div class="pg-hero">
-    <div class="pg-bg" style="background-image:url('IMG_0343.jpeg')"></div>
+    <div class="pg-bg" style="background-size:cover;background-position:center;background-image:url('IMG_0371.jpeg');"></div>
     <div class="pg-overlay"></div>
     <div class="pg-ct fu">
       <span class="overline" data-en="Ethics & Governance" data-fr="Éthique & Gouvernance" data-es="Ética y Gobernanza">Ethics & Governance</span>
@@ -617,7 +675,7 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
 
 <div id="page-founders" class="page">
   <div class="pg-hero">
-    <div class="pg-bg" style="background-image:url('IMG_0375.jpeg')"></div>
+    <div class="pg-bg" style="background-size:cover;background-position:center;background-image:url('IMG_0375.jpeg')"></div>
     <div class="pg-overlay"></div>
     <div class="pg-ct fu">
       <span class="overline" data-en="The People Behind SAMA" data-fr="Les Personnes derrière SAMA" data-es="Las Personas detrás de SAMA">The People Behind SAMA</span>
@@ -670,7 +728,7 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
 
 <div id="page-contact" class="page">
   <div class="pg-hero" style="height:44vh;min-height:320px;">
-    <div class="pg-bg" style="background-image:url('IMG_0342.jpeg')"></div>
+    <div class="pg-bg" style="background-size:cover;background-position:center;background-image:url('IMG_0342.jpeg')"></div>
     <div class="pg-overlay"></div>
     <div class="pg-ct fu">
       <span class="overline" data-en="Get in Touch" data-fr="Prendre Contact" data-es="Contacto">Get in Touch</span>
