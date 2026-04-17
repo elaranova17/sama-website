@@ -109,7 +109,7 @@ nav.dark{background:rgba(15,15,15,0.96);backdrop-filter:blur(16px);border-bottom
 .nav-logo img{height:36px;width:auto;transition:height 0.4s;}
 nav.dark .nav-logo img{height:29px;}
 .nav-center{display:flex;gap:2.8rem;list-style:none;}
-.nav-center a{font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;cursor:pointer;transition:color 0.3s;position:relative;}
+.nav-center a{font-size:0.78rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.78);text-decoration:none;cursor:pointer;transition:color 0.3s;position:relative;}
 .nav-center a::after{content:"";position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--gold);transition:width 0.4s var(--ease);}
 .nav-center a:hover{color:var(--white);}
 .nav-center a:hover::after{width:100%;}
@@ -133,8 +133,8 @@ nav.dark .nav-logo img{height:29px;}
 .hero-media{position:absolute;inset:0;}
 .hero-media video{width:100%;height:100%;object-fit:cover;opacity:0.38;}
 .hero-img{position:absolute;inset:0;background-size:cover;background-position:center 30%;opacity:0.32;}
-.hero-vignette{position:absolute;inset:0;background:radial-gradient(ellipse 120% 100% at 50% 50%, transparent 30%, rgba(15,15,15,0.6) 100%);}
-.hero-fade{position:absolute;inset:0;background:linear-gradient(to bottom, rgba(15,15,15,0.1) 0%, transparent 30%, rgba(15,15,15,0.5) 72%, rgba(15,15,15,1) 100%);}
+.hero-vignette{position:absolute;inset:0;background:rgba(15,15,15,0.55);}
+.hero-fade{position:absolute;inset:0;background:linear-gradient(to bottom, rgba(15,15,15,0.3) 0%, rgba(15,15,15,0.2) 40%, rgba(15,15,15,0.7) 80%, rgba(15,15,15,1) 100%);}
 .hero-body{position:relative;z-index:2;text-align:center;padding:0 2rem;animation:rise 1.8s var(--ease) both;}
 @keyframes rise{from{opacity:0;transform:translateY(26px);}to{opacity:1;transform:translateY(0);}}
 .hero-monogram{font-family:"Cormorant Garamond",serif;font-size:clamp(1.4rem,2.5vw,2.2rem);font-weight:400;letter-spacing:0.55em;color:var(--white);margin-bottom:0.9rem;animation:rise 1.8s var(--ease) 0.2s both;}
@@ -430,16 +430,21 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
     </div>
     <div class="hero-vignette"></div>
     <div class="hero-fade"></div>
-    <div class="hero-body">
-      <div class="hero-monogram">S · A · M · A</div>
-      <div class="hero-tagline">L'Excellence Suisse · La Richesse Colombienne</div>
-      <div class="hero-rule"></div>
-      <button class="hero-btn" onclick="go('alliance')"
+    <div class="hero-scroll"><div class="scroll-tick"></div></div>
+  </section>
+
+  <!-- INTRO SECTION — S·A·M·A title below video -->
+
+  <section style="background:#0F0F0F;padding:5.5rem 0 5rem;text-align:center;border-bottom:1px solid rgba(218,175,87,0.1);">
+    <div class="wrap-sm">
+      <div style="font-family:'Playfair Display',serif;font-size:clamp(1.2rem,2vw,1.6rem);font-weight:400;letter-spacing:0.45em;color:#F4F0E8;text-transform:uppercase;margin-bottom:1.1rem;">S · A · M · A</div>
+      <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1rem,1.8vw,1.3rem);font-weight:300;letter-spacing:0.07em;color:#DAAF57;margin-bottom:2.5rem;">L'Excellence Suisse · La Richesse Colombienne</div>
+      <div style="width:40px;height:1px;background:#DAAF57;margin:0 auto 2.5rem;"></div>
+      <button class="btn btn-ghost" onclick="go('alliance')"
         data-en="Discover the Alliance" data-fr="Découvrir l'Alliance" data-es="Descubrir la Alianza">
         Discover the Alliance
       </button>
     </div>
-    <div class="hero-scroll"><div class="scroll-tick"></div><span>Scroll</span></div>
   </section>
 
   <!-- WHO WE ARE — warm editorial tone -->
@@ -448,7 +453,7 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
     <div class="wrap">
       <div class="split">
         <div class="split-img fu">
-          <img src="IMG_0376.jpeg" alt="International meeting Lake Geneva"
+          <img src="IMG_0375.jpeg" alt="Executive La Chaux-de-Fonds"
                onerror="this.style.height='480px';this.style.background='#181818';this.style.display='block'">
           <div class="split-img-frame"></div>
         </div>
@@ -550,7 +555,7 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
 
 <div id="page-alliance" class="page">
   <div class="pg-hero">
-    <div class="pg-bg" style="background-size:cover;background-position:center;background-image:url('IMG_0376.jpeg');opacity:1;"></div>
+    <div class="pg-bg" style="background-size:cover;background-position:center;background-image:url('IMG_0371.jpeg');"></div>
     <div class="pg-overlay"></div>
     <div class="pg-ct fu">
       <span class="overline" data-en="L'Alliance" data-fr="L'Alliance" data-es="La Alianza">L'Alliance</span>
@@ -582,7 +587,7 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
           </p>
         </div>
         <div class="split-img fu d2">
-          <img src="IMG_0341.jpeg" alt="Lake Geneva office"
+          <img src="IMG_0376.jpeg" alt="International meeting"
                onerror="this.style.height='480px';this.style.background='#181818';this.style.display='block'">
           <div class="split-img-frame"></div>
         </div>
@@ -650,7 +655,7 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
         <p class="svc-p" data-en="We export Colombian-origin gold to refineries, manufacturers, and jewellery houses around the world. Every shipment is RUCOM registered, ANM certified, and fully traceable from source to delivery." data-fr="Nous exportons de l'or d'origine colombienne vers des raffineries, fabricants et maisons de joaillerie. Chaque envoi est enregistré RUCOM, certifié ANM et entièrement traçable." data-es="Exportamos oro de origen colombiano a refinerías, fabricantes y casas de joyería de todo el mundo. Cada envío está registrado en RUCOM, certificado por la ANM y es completamente trazable.">We export Colombian-origin gold to refineries, manufacturers, and jewellery houses around the world. Every shipment is RUCOM registered, ANM certified, and fully traceable from source to delivery.</p>
         <div class="tags"><span class="tag">RUCOM</span><span class="tag">ANM</span><span class="tag">Colombia Origin</span></div>
       </div>
-      <div class="svc-img"><img src="IMG_0372.jpeg" alt="Gold bars" onerror="this.style.background='#1a1a1a';this.style.height='380px';this.style.display='block'" onerror="this.style.height='380px';this.style.background='#181818';this.style.display='block'"></div>
+      <div class="svc-img"><img src="IMG_0354.jpeg" alt="Gold bars" onerror="this.style.background='#1a1a1a';this.style.height='380px';this.style.display='block'" onerror="this.style.height='380px';this.style.background='#181818';this.style.display='block'"></div>
     </div>
     <div class="svc r">
       <div class="svc-img"><img src="IMG_0373.jpeg" alt="Compliance documentation" onerror="this.style.background='#1a1a1a';this.style.height='380px';this.style.display='block'" onerror="this.style.height='380px';this.style.background='#181818';this.style.display='block'"></div>
@@ -741,7 +746,7 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
 
 <div id="page-founders" class="page">
   <div class="pg-hero">
-    <div class="pg-bg" style="background-size:cover;background-position:center top;background-image:url('IMG_0386.png')"></div>
+    <div class="pg-bg" style="background-size:cover;background-position:center;background-image:url('IMG_0375.jpeg')"></div>
     <div class="pg-overlay"></div>
     <div class="pg-ct fu">
       <span class="overline" data-en="The People Behind SAMA" data-fr="Les Personnes derrière SAMA" data-es="Las Personas detrás de SAMA">The People Behind SAMA</span>
