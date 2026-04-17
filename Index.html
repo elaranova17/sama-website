@@ -96,7 +96,7 @@
 
 ```
 /* TYPE */
-.display{font-family:"Playfair Display",serif;font-size:clamp(2.8rem,6vw,5.8rem);font-weight:500;font-style:italic;line-height:1.1;letter-spacing:0.01em;color:#F4F0E8;text-shadow:0 2px 60px rgba(0,0,0,0.8),0 4px 20px rgba(0,0,0,0.6);}
+.display{font-family:"Playfair Display",serif;font-size:clamp(2.5rem,5.5vw,5rem);font-weight:500;font-style:italic;line-height:1.1;color:#F4F0E8;text-shadow:0 2px 40px rgba(0,0,0,0.9);}
 .headline{font-family:"Cormorant Garamond",serif;font-size:clamp(2.2rem,3.8vw,3.8rem);font-weight:400;line-height:1.18;color:#F4F0E8;}
 .overline{font-size:0.58rem;font-weight:400;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);}
 .body{font-size:clamp(1.05rem,1.4vw,1.2rem);font-weight:300;line-height:1.95;color:var(--text-body);}
@@ -108,12 +108,12 @@ nav.dark{background:rgba(15,15,15,0.96);backdrop-filter:blur(16px);border-bottom
 .nav-logo{cursor:pointer;}
 .nav-logo img{height:36px;width:auto;transition:height 0.4s;}
 nav.dark .nav-logo img{height:29px;}
-.nav-center{display:flex;gap:2.2rem;list-style:none;justify-content:center;}
-.nav-center a{font-size:0.82rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.88);font-weight:400;text-decoration:none;cursor:pointer;transition:color 0.3s;position:relative;}
+.nav-center{display:flex;gap:2rem;list-style:none;justify-content:center;}
+.nav-center a{font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.82);text-decoration:none;cursor:pointer;transition:color 0.3s;position:relative;font-weight:400;}
 .nav-center a::after{content:"";position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--gold);transition:width 0.4s var(--ease);}
 .nav-center a:hover{color:var(--white);}
 .nav-center a:hover::after{width:100%;}
-.nav-right{display:flex;align-items:center;gap:1.2rem;justify-content:flex-end;}
+.nav-right{display:flex;align-items:center;gap:1rem;justify-content:flex-end;}
 .lang-btn{font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;background:none;border:none;cursor:pointer;color:var(--text-muted);transition:color 0.3s;padding:0;}
 .lang-btn.on{color:var(--gold);}
 .lang-sep{width:1px;height:8px;background:var(--border-s);}
@@ -133,8 +133,8 @@ nav.dark .nav-logo img{height:29px;}
 .hero-media{position:absolute;inset:0;}
 .hero-media video{width:100%;height:100%;object-fit:cover;opacity:0.5;}
 .hero-img{position:absolute;inset:0;background-size:cover;background-position:center 30%;opacity:0.32;}
-.hero-vignette{position:absolute;inset:0;background:rgba(15,15,15,0.45);mask-image:linear-gradient(to bottom,rgba(0,0,0,0.3) 0%,rgba(0,0,0,1) 15%,rgba(0,0,0,1) 75%,rgba(0,0,0,0) 100%);-webkit-mask-image:linear-gradient(to bottom,rgba(0,0,0,0.3) 0%,rgba(0,0,0,1) 15%,rgba(0,0,0,1) 75%,rgba(0,0,0,0) 100%);}
-.hero-fade{position:absolute;inset:0;background:linear-gradient(to bottom, rgba(15,15,15,0.6) 0%, rgba(15,15,15,0.2) 20%, rgba(15,15,15,0.2) 65%, rgba(15,15,15,0.95) 90%, rgba(15,15,15,1) 100%);}
+.hero-vignette{position:absolute;inset:0;background:rgba(15,15,15,0.5);}
+.hero-fade{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(15,15,15,0.55) 0%,rgba(15,15,15,0.25) 30%,rgba(15,15,15,0.25) 65%,rgba(15,15,15,0.92) 90%,#0F0F0F 100%);}
 .hero-body{position:relative;z-index:2;text-align:center;padding:0 2rem;animation:rise 1.8s var(--ease) both;}
 @keyframes rise{from{opacity:0;transform:translateY(26px);}to{opacity:1;transform:translateY(0);}}
 .hero-monogram{font-family:"Cormorant Garamond",serif;font-size:clamp(1.4rem,2.5vw,2.2rem);font-weight:400;letter-spacing:0.55em;color:var(--white);margin-bottom:0.9rem;animation:rise 1.8s var(--ease) 0.2s both;}
@@ -145,8 +145,8 @@ nav.dark .nav-logo img{height:29px;}
 .hero-scroll{position:absolute;bottom:2.4rem;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:0.5rem;animation:rise 1.8s var(--ease) 1s both;}
 .hero-scroll span{font-size:0.55rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.28);}
 .scroll-tick{width:1px;height:36px;background:linear-gradient(to bottom,var(--gold),transparent);animation:tick 2.2s ease-in-out infinite;}
-@keyframes tick{0%{opacity:0;transform:scaleY(0);transform-origin:top;}40%{opacity:1;transform:scaleY(1);}100%{opacity:0;transform:translateY(12px);}}
-@keyframes scrollChev{0%,100%{opacity:0.3;transform:translateY(-3px);}50%{opacity:0.9;transform:translateY(3px);}}
+@keyframes tick{0%{opacity:0;height:0;}50%{opacity:0.7;height:50px;}100%{opacity:0;height:50px;transform:translateY(8px);}}40%{opacity:1;transform:scaleY(1);}100%{opacity:0;transform:translateY(12px);}}
+@keyframes scrollChev{0%{opacity:0;transform:translateY(-6px);}50%{opacity:0.85;transform:translateY(0);}100%{opacity:0;transform:translateY(6px);}}50%{opacity:0.9;transform:translateY(3px);}}
 
 /* ── SHARED SECTION ── */
 section{padding:clamp(4.5rem,9vw,8rem) 0;}
@@ -228,11 +228,11 @@ section{padding:clamp(4.5rem,9vw,8rem) 0;}
 
 /* ── COMPLIANCE ── */
 .comp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border-s);margin-top:3.5rem;}
-.comp-c{background:var(--black-card);padding:2.6rem 2.2rem;transition:background 0.4s;}
+.comp-c{background:#131313;padding:2.8rem 2.5rem;transition:background 0.4s;border-bottom:1px solid rgba(218,175,87,0.08);}
 .comp-c:hover{background:rgba(218,175,87,0.03);}
-.comp-ico{width:32px;height:32px;border:1px solid rgba(218,175,87,0.28);display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;}
-.comp-ico svg{width:14px;height:14px;stroke:var(--gold);fill:none;stroke-width:1.5;}
-.comp-t{font-family:"Cormorant Garamond",serif;font-size:1.35rem;font-weight:500;color:var(--white);margin-bottom:0.6rem;}
+.comp-ico{width:44px;height:44px;border-left:2px solid #DAAF57;display:flex;align-items:center;padding-left:0.8rem;margin-bottom:1.5rem;}
+.comp-ico svg{width:18px;height:18px;stroke:#DAAF57;fill:none;stroke-width:1.5;}
+.comp-t{font-family:"Cormorant Garamond",serif;font-size:1.4rem;font-weight:500;color:#F4F0E8;margin-bottom:0.7rem;}
 .comp-p{font-size:0.78rem;color:rgba(255,255,255,0.4);line-height:1.85;}
 .comp-cd{margin-top:1rem;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(218,175,87,0.5);}
 
@@ -314,14 +314,14 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
 @media(max-width:768px){
 .nav-center{display:none;}
 .ham{display:flex;}
-#sama-nav{padding:0 5vw;height:64px;}
-#sama-nav.dark{height:56px;}
+#sama-nav{position:fixed;top:0;left:0;right:0;z-index:10000;display:grid;grid-template-columns:200px 1fr 200px;align-items:center;padding:0 3vw;height:72px;transition:all 0.5s;}
+#sama-nav.dark{background:rgba(15,15,15,0.97);backdrop-filter:blur(20px);border-bottom:1px solid rgba(218,175,87,0.14);height:60px;}
 .nav-logo-txt{font-size:0.9rem;letter-spacing:0.3em;}
-.hero{height:72vh!important;min-height:480px!important;}
+.hero{height:65vh;min-height:420px;}
 .hero-body{padding:0 1.5rem;}
 .hero-btn{padding:0.8rem 1.8rem;font-size:0.58rem;}
 .pg-hero{height:45vh;min-height:320px;padding-bottom:3rem;}
-.pg-ct .display{font-size:clamp(2.2rem,5.5vw,4.5rem);font-family:“Playfair Display”,serif;font-style:italic;color:#F4F0E8;text-shadow:0 2px 40px rgba(0,0,0,0.9);}
+.pg-ct .display{font-size:clamp(2rem,5vw,4.2rem)!important;font-family:“Playfair Display”,serif!important;font-style:italic!important;color:#F4F0E8!important;text-shadow:0 2px 30px rgba(0,0,0,0.95)!important;font-weight:500!important;}
 .s-section{padding:3.5rem 0;}
 .stats-row{grid-template-columns:1fr;}
 .stat{border-right:none;border-bottom:1px solid rgba(255,255,255,0.06);padding:1.5rem;}
@@ -338,7 +338,7 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
 .svc-ct{padding:2rem 1.5rem;}
 .svc-t{font-size:1.6rem;}
 .comp-grid{grid-template-columns:1fr;}
-.comp-c{padding:2rem 1.5rem;}
+.comp-c{background:#131313;padding:2.8rem 2.5rem;transition:background 0.4s;border-bottom:1px solid rgba(218,175,87,0.08);}
 .vals{grid-template-columns:1fr;gap:1.8rem;}
 .cities{grid-template-columns:1fr;height:auto;}
 .city-p{min-height:260px;padding:2rem;}
@@ -365,7 +365,7 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
 .hero-tagline{font-size:1rem;}
 .cards{grid-template-columns:1fr;}
 .svc-ct{padding:1.8rem 1.2rem;}
-.comp-c{padding:1.5rem 1.2rem;}
+.comp-c{background:#131313;padding:2.8rem 2.5rem;transition:background 0.4s;border-bottom:1px solid rgba(218,175,87,0.08);}
 .form-box{padding:1.5rem 1.2rem;}
 .wrap{padding:0 4vw;}
 .pg-hero{height:40vh;min-height:280px;}
@@ -703,7 +703,7 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
 
 <div id="page-ethique" class="page">
   <div class="pg-hero">
-    <div class="pg-bg" style="background-size:cover;background-position:center;background-image:url('IMG_0386.png');"></div>
+    <div class="pg-bg" style="background-size:cover;background-position:center;background-image:url('IMG_0342.jpeg');"></div>
     <div class="pg-overlay"></div>
     <div class="pg-ct fu">
       <span class="overline" data-en="Ethics & Governance" data-fr="Éthique & Gouvernance" data-es="Ética y Gobernanza">Ethics & Governance</span>
@@ -737,10 +737,10 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
     <div class="wrap-sm fu">
       <div class="rule cx"></div>
       <p class="pull"
-        data-en="Trust is earned quietly — through consistency, through documentation, and through showing up <em>the same way, every time.</em>"
+        data-en="Every transaction we complete carries the full weight of two legal systems and <em>one uncompromising standard.</em>"
         data-fr="La confiance se gagne silencieusement — par la constance, par la documentation, et en se montrant <em>de la même façon, à chaque fois.</em>"
-        data-es="La confianza se gana en silencio — a través de la constancia, la documentación, y mostrándose <em>de la misma manera, cada vez.</em>">
-        Trust is earned quietly — through consistency, through documentation, and through showing up <em>the same way, every time.</em>
+        data-es="Cada transacción que completamos lleva el peso total de dos sistemas legales y <em>un estándar sin compromisos.</em>">
+        Every transaction we complete carries the full weight of two legal systems and <em>one uncompromising standard.</em>
       </p>
     </div>
   </section>
@@ -752,7 +752,7 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
 
 <div id="page-founders" class="page">
   <div class="pg-hero">
-    <div class="pg-bg" style="background-size:cover;background-position:center;background-image:url('IMG_0375.jpeg')"></div>
+    <div class="pg-bg" style="background-size:cover;background-position:center;background-image:url('IMG_0386.png')"></div>
     <div class="pg-overlay"></div>
     <div class="pg-ct fu">
       <span class="overline" data-en="The People Behind SAMA" data-fr="Les Personnes derrière SAMA" data-es="Las Personas detrás de SAMA">The People Behind SAMA</span>
@@ -805,7 +805,7 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
 
 <div id="page-contact" class="page">
   <div class="pg-hero" style="height:44vh;min-height:320px;">
-    <div class="pg-bg" style="background-size:cover;background-position:center;background-image:url('IMG_0342.jpeg')"></div>
+    <div class="pg-bg" style="background-size:cover;background-position:center;background-image:url('IMG_0375.jpeg')"></div>
     <div class="pg-overlay"></div>
     <div class="pg-ct fu">
       <span class="overline" data-en="Get in Touch" data-fr="Prendre Contact" data-es="Contacto">Get in Touch</span>
