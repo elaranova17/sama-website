@@ -377,6 +377,7 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
   <link rel="dns-prefetch" href="https://fonts.googleapis.com">
   <link rel="dns-prefetch" href="https://www.youtube.com">
   <meta name="theme-color" content="#0F0F0F">
+  <!-- Netlify Forms notification: info@southamericanmetalalliance.com -->
 </head>
 <body>
 
@@ -826,7 +827,9 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
             </div>
           </div>
         </div>
-        <div class="form-box fu d2">
+        <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/success" class="form-box fu d2">
+        <input type="hidden" name="form-name" value="contact">
+        <input type="hidden" name="bot-field" style="display:none">
           <div class="fg"><label class="fl" data-en="Full Name *" data-fr="Nom Complet *" data-es="Nombre Completo *">Full Name *</label><input type="text" class="fi" placeholder="Your full name"></div>
           <div class="fg"><label class="fl" data-en="Company *" data-fr="Société *" data-es="Empresa *">Company *</label><input type="text" class="fi" placeholder="Company name"></div>
           <div class="fg"><label class="fl" data-en="Country *" data-fr="Pays *" data-es="País *">Country *</label><input type="text" class="fi" placeholder="Country"></div>
@@ -843,9 +846,9 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
             </select>
           </div>
           <div class="fg"><label class="fl" data-en="Message *" data-fr="Message *" data-es="Mensaje *">Message *</label><textarea class="fta" placeholder="Tell us about your needs"></textarea></div>
-          <button class="fsub" onclick="sendForm(this)"
+          <button class="fsub" type="submit"
             data-en="Send Message" data-fr="Envoyer le Message" data-es="Enviar Mensaje">Send Message</button>
-        </div>
+        </form>
       </div>
     </div>
   </section>
