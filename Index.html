@@ -34,10 +34,10 @@
 
 ```
 /* TYPE */
-.display{font-family:"Cormorant Garamond",serif;font-size:clamp(2.6rem,5.5vw,5rem);font-weight:300;line-height:1.06;letter-spacing:-0.01em;}
-.headline{font-family:"Cormorant Garamond",serif;font-size:clamp(1.7rem,3vw,2.9rem);font-weight:400;line-height:1.18;}
+.display{font-family:"Cormorant Garamond",serif;font-size:clamp(3rem,6.5vw,6rem);font-weight:300;line-height:1.06;letter-spacing:-0.01em;}
+.headline{font-family:"Cormorant Garamond",serif;font-size:clamp(2rem,3.5vw,3.4rem);font-weight:400;line-height:1.18;}
 .overline{font-size:0.58rem;font-weight:400;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);}
-.body{font-size:clamp(0.875rem,1.1vw,0.95rem);font-weight:300;line-height:1.95;color:var(--text-body);}
+.body{font-size:clamp(1rem,1.3vw,1.1rem);font-weight:300;line-height:1.95;color:var(--text-body);}
 .caption{font-size:0.72rem;font-weight:300;color:var(--text-muted);letter-spacing:0.04em;}
 
 /* NAV */
@@ -47,7 +47,7 @@ nav.dark{background:rgba(15,15,15,0.96);backdrop-filter:blur(16px);border-bottom
 .nav-logo img{height:36px;width:auto;transition:height 0.4s;}
 nav.dark .nav-logo img{height:29px;}
 .nav-center{display:flex;gap:2.8rem;list-style:none;}
-.nav-center a{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;cursor:pointer;transition:color 0.3s;position:relative;}
+.nav-center a{font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;cursor:pointer;transition:color 0.3s;position:relative;}
 .nav-center a::after{content:"";position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--gold);transition:width 0.4s var(--ease);}
 .nav-center a:hover{color:var(--white);}
 .nav-center a:hover::after{width:100%;}
@@ -75,8 +75,8 @@ nav.dark .nav-logo img{height:29px;}
 .hero-fade{position:absolute;inset:0;background:linear-gradient(to bottom, rgba(15,15,15,0.1) 0%, transparent 30%, rgba(15,15,15,0.5) 72%, rgba(15,15,15,1) 100%);}
 .hero-body{position:relative;z-index:2;text-align:center;padding:0 2rem;animation:rise 1.8s var(--ease) both;}
 @keyframes rise{from{opacity:0;transform:translateY(26px);}to{opacity:1;transform:translateY(0);}}
-.hero-monogram{font-family:"Cormorant Garamond",serif;font-size:clamp(1rem,1.8vw,1.4rem);font-weight:400;letter-spacing:0.55em;color:var(--white);margin-bottom:0.9rem;animation:rise 1.8s var(--ease) 0.2s both;}
-.hero-tagline{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(0.9rem,1.6vw,1.15rem);font-weight:300;letter-spacing:0.08em;color:var(--gold);margin-bottom:2.6rem;animation:rise 1.8s var(--ease) 0.38s both;}
+.hero-monogram{font-family:"Cormorant Garamond",serif;font-size:clamp(1.2rem,2.2vw,1.8rem);font-weight:400;letter-spacing:0.55em;color:var(--white);margin-bottom:0.9rem;animation:rise 1.8s var(--ease) 0.2s both;}
+.hero-tagline{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(1.05rem,1.9vw,1.35rem);font-weight:300;letter-spacing:0.08em;color:var(--gold);margin-bottom:2.6rem;animation:rise 1.8s var(--ease) 0.38s both;}
 .hero-rule{width:44px;height:1px;background:var(--gold);margin:0 auto 2.6rem;animation:rise 1.8s var(--ease) 0.5s both;}
 .hero-btn{display:inline-block;font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--white);border:1px solid rgba(218,175,87,0.4);padding:0.9rem 2.4rem;cursor:pointer;background:transparent;transition:all 0.4s var(--ease);animation:rise 1.8s var(--ease) 0.65s both;}
 .hero-btn:hover{background:var(--gold);border-color:var(--gold);color:var(--black);}
@@ -118,7 +118,7 @@ section{padding:clamp(4.5rem,9vw,8rem) 0;}
 .card:hover::before{transform:scaleX(1);}
 .card-n{font-family:"Cormorant Garamond",serif;font-size:0.72rem;color:var(--gold);opacity:0.45;letter-spacing:0.2em;display:block;margin-bottom:1.6rem;}
 .card-t{font-family:"Cormorant Garamond",serif;font-size:1.25rem;font-weight:500;color:var(--white);margin-bottom:0.8rem;}
-.card-p{font-size:0.78rem;line-height:1.82;color:rgba(255,255,255,0.4);}
+.card-p{font-size:0.85rem;line-height:1.82;color:rgba(255,255,255,0.4);}
 
 /* ── CTA BAND ── */
 .cta-band{background:var(--black-soft);border-top:1px solid var(--border);border-bottom:1px solid var(--border);text-align:center;padding:5.5rem 0;}
@@ -159,7 +159,7 @@ section{padding:clamp(4.5rem,9vw,8rem) 0;}
 .svc-ct{background:var(--black-card);padding:3.5rem 4rem;display:flex;flex-direction:column;justify-content:center;}
 .svc-idx{font-family:"Cormorant Garamond",serif;font-size:3rem;font-weight:300;color:rgba(218,175,87,0.1);line-height:1;margin-bottom:0.6rem;}
 .svc-t{font-family:"Cormorant Garamond",serif;font-size:1.65rem;font-weight:400;color:var(--white);margin-bottom:1rem;}
-.svc-p{font-size:0.83rem;color:rgba(255,255,255,0.48);line-height:1.9;margin-bottom:1.8rem;}
+.svc-p{font-size:0.92rem;color:rgba(255,255,255,0.48);line-height:1.9;margin-bottom:1.8rem;}
 .tags{display:flex;flex-wrap:wrap;gap:0.4rem;}
 .tag{font-size:0.56rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(218,175,87,0.2);padding:0.26rem 0.65rem;}
 
@@ -301,8 +301,8 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
   <!-- HERO: full screen, S·A·M·A monogram, no logo image -->
 
   <section class="hero">
-    <div class="hero-media">
-      <video autoplay muted loop playsinline><source src="sama_hero.mp4" type="video/mp4"></video>
+    <div class="hero-media" style="position:absolute;inset:0;overflow:hidden;">
+      <iframe id="yt-hero" src="https://www.youtube.com/embed/vO6G-v-ZRYk?autoplay=1&mute=1&loop=1&playlist=vO6G-v-ZRYk&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&playsinline=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="position:absolute;top:50%;left:50%;width:177.78vh;height:100vh;min-width:100%;min-height:56.25vw;transform:translate(-50%,-50%);opacity:0.42;pointer-events:none;"></iframe>
       <div class="hero-img" style="background-image:url('IMG_0341.jpeg')"></div>
     </div>
     <div class="hero-vignette"></div>
@@ -325,7 +325,7 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
     <div class="wrap">
       <div class="split">
         <div class="split-img fu">
-          <img src="IMG_0341.jpeg" alt="La Chaux-de-Fonds office"
+          <img src="IMG_0342.jpeg" alt="La Chaux-de-Fonds office"
                onerror="this.style.height='480px';this.style.background='#181818';this.style.display='block'">
           <div class="split-img-frame"></div>
         </div>
@@ -383,7 +383,7 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
   <!-- EDITORIAL FULLWIDTH IMAGE with text overlay -->
 
   <section style="padding:0;position:relative;height:520px;overflow:hidden;">
-    <div style="position:absolute;inset:0;background-image:url('IMG_0347.jpeg');background-size:cover;background-position:center 40%;opacity:0.4;"></div>
+    <div style="position:absolute;inset:0;background-image:url('IMG_0349.jpeg');background-size:cover;background-position:center 40%;opacity:0.4;"></div>
     <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(15,15,15,0.92) 0%,rgba(15,15,15,0.5) 55%,rgba(15,15,15,0.15) 100%);"></div>
     <div style="position:relative;z-index:2;height:100%;display:flex;align-items:center;">
       <div class="wrap">
@@ -486,7 +486,7 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
   <section style="padding:0;">
     <div class="cities">
       <div class="city-p">
-        <div class="city-bg" style="background-image:url('IMG_0344.jpeg')"></div>
+        <div class="city-bg" style="background-image:url('IMG_0343.jpeg')"></div>
         <div class="city-ov"></div>
         <div class="city-ct fu">
           <div class="city-nm">La Chaux-de-Fonds</div>
@@ -511,7 +511,7 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
 
 <div id="page-actifs" class="page">
   <div class="pg-hero">
-    <div class="pg-bg" style="background-image:url('IMG_0354.jpeg')"></div>
+    <div class="pg-bg" style="background-image:url('IMG_0346.jpeg')"></div>
     <div class="pg-overlay"></div>
     <div class="pg-ct fu">
       <span class="overline" data-en="What We Offer" data-fr="Ce que nous offrons" data-es="Lo que ofrecemos">What We Offer</span>
@@ -530,7 +530,7 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
       <div class="svc-img"><img src="IMG_0354.jpeg" alt="Gold" onerror="this.style.height='380px';this.style.background='#181818';this.style.display='block'"></div>
     </div>
     <div class="svc r">
-      <div class="svc-img"><img src="IMG_0342.jpeg" alt="Compliance" onerror="this.style.height='380px';this.style.background='#181818';this.style.display='block'"></div>
+      <div class="svc-img"><img src="IMG_0350.jpeg" alt="Compliance" onerror="this.style.height='380px';this.style.background='#181818';this.style.display='block'"></div>
       <div class="svc-ct fu">
         <div class="svc-idx">02</div>
         <div class="svc-t" data-en="Compliance & Documentation" data-fr="Conformité & Documentation" data-es="Cumplimiento & Documentación">Compliance & Documentation</div>
@@ -545,7 +545,7 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
         <p class="svc-p" data-en="As a registered Comercializadora Internacional, we operate within the full legal framework for Colombian precious metals exports — under DIAN and MINCIT oversight, through the VUCE platform." data-fr="En tant que Commercialisateur International enregistré, nous opérons dans le cadre légal complet des exportations colombiennes de métaux précieux — sous supervision DIAN et MINCIT." data-es="Como Comercializadora Internacional registrada, operamos dentro del marco legal completo para exportaciones de metales preciosos colombianos — bajo supervisión DIAN y MINCIT.">As a registered Comercializadora Internacional, we operate within the full legal framework for Colombian precious metals exports — under DIAN and MINCIT oversight, through the VUCE platform.</p>
         <div class="tags"><span class="tag">C.I. VUCE</span><span class="tag">DIAN</span><span class="tag">MINCIT</span></div>
       </div>
-      <div class="svc-img"><img src="IMG_0347.jpeg" alt="Trade" onerror="this.style.height='380px';this.style.background='#181818';this.style.display='block'"></div>
+      <div class="svc-img"><img src="IMG_0348.jpeg" alt="Trade" onerror="this.style.height='380px';this.style.background='#181818';this.style.display='block'"></div>
     </div>
   </section>
   <section class="cta-band">
@@ -569,7 +569,7 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
 
 <div id="page-ethique" class="page">
   <div class="pg-hero">
-    <div class="pg-bg" style="background-image:url('IMG_0343.jpeg')"></div>
+    <div class="pg-bg" style="background-image:url('IMG_0344.jpeg')"></div>
     <div class="pg-overlay"></div>
     <div class="pg-ct fu">
       <span class="overline" data-en="Ethics & Governance" data-fr="Éthique & Gouvernance" data-es="Ética y Gobernanza">Ethics & Governance</span>
@@ -671,7 +671,7 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
 
 <div id="page-contact" class="page">
   <div class="pg-hero" style="height:44vh;min-height:320px;">
-    <div class="pg-bg" style="background-image:url('IMG_0342.jpeg')"></div>
+    <div class="pg-bg" style="background-image:url('IMG_0343.jpeg')"></div>
     <div class="pg-overlay"></div>
     <div class="pg-ct fu">
       <span class="overline" data-en="Get in Touch" data-fr="Prendre Contact" data-es="Contacto">Get in Touch</span>
