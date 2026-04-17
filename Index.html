@@ -108,12 +108,12 @@ nav.dark{background:rgba(15,15,15,0.96);backdrop-filter:blur(16px);border-bottom
 .nav-logo{cursor:pointer;}
 .nav-logo img{height:36px;width:auto;transition:height 0.4s;}
 nav.dark .nav-logo img{height:29px;}
-.nav-center{display:flex;gap:2rem;list-style:none;justify-content:center;}
+.nav-center{display:flex;gap:1.8rem;list-style:none;justify-content:center;}
 .nav-center a{font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.82);text-decoration:none;cursor:pointer;transition:color 0.3s;position:relative;font-weight:400;}
 .nav-center a::after{content:"";position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--gold);transition:width 0.4s var(--ease);}
 .nav-center a:hover{color:var(--white);}
 .nav-center a:hover::after{width:100%;}
-.nav-right{display:flex;align-items:center;gap:1rem;justify-content:flex-end;}
+.nav-right{display:flex;align-items:center;gap:0.8rem;justify-content:flex-end;}
 .lang-btn{font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;background:none;border:none;cursor:pointer;color:var(--text-muted);transition:color 0.3s;padding:0;}
 .lang-btn.on{color:var(--gold);}
 .lang-sep{width:1px;height:8px;background:var(--border-s);}
@@ -129,7 +129,7 @@ nav.dark .nav-logo img{height:29px;}
 .page{display:none;}.page.on{display:block;}
 
 /* ── HERO ── */
-.hero{position:relative;width:100%;height:100vh;min-height:660px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.hero{position:relative;width:100%;height:65vh;min-height:440px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
 .hero-media{position:absolute;inset:0;}
 .hero-media video{width:100%;height:100%;object-fit:cover;opacity:0.5;}
 .hero-img{position:absolute;inset:0;background-size:cover;background-position:center 30%;opacity:0.32;}
@@ -314,7 +314,7 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
 @media(max-width:768px){
 .nav-center{display:none;}
 .ham{display:flex;}
-#sama-nav{position:fixed;top:0;left:0;right:0;z-index:10000;display:grid;grid-template-columns:200px 1fr 200px;align-items:center;padding:0 3vw;height:72px;transition:all 0.5s;}
+#sama-nav{position:fixed;top:0;left:0;right:0;z-index:10000;display:grid;grid-template-columns:180px 1fr 180px;align-items:center;padding:0 3vw;height:72px;transition:all 0.5s;}
 #sama-nav.dark{background:rgba(15,15,15,0.97);backdrop-filter:blur(20px);border-bottom:1px solid rgba(218,175,87,0.14);height:60px;}
 .nav-logo-txt{font-size:0.9rem;letter-spacing:0.3em;}
 .hero{height:65vh;min-height:420px;}
@@ -661,10 +661,10 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
         <p class="svc-p" data-en="We export Colombian-origin gold to refineries, manufacturers, and jewellery houses around the world. Every shipment is RUCOM registered, ANM certified, and fully traceable from source to delivery." data-fr="Nous exportons de l'or d'origine colombienne vers des raffineries, fabricants et maisons de joaillerie. Chaque envoi est enregistré RUCOM, certifié ANM et entièrement traçable." data-es="Exportamos oro de origen colombiano a refinerías, fabricantes y casas de joyería de todo el mundo. Cada envío está registrado en RUCOM, certificado por la ANM y es completamente trazable.">We export Colombian-origin gold to refineries, manufacturers, and jewellery houses around the world. Every shipment is RUCOM registered, ANM certified, and fully traceable from source to delivery.</p>
         <div class="tags"><span class="tag">RUCOM</span><span class="tag">ANM</span><span class="tag">Colombia Origin</span></div>
       </div>
-      <div class="svc-img"><img src="IMG_0393.jpeg" alt="Gold macro" onerror="this.style.background='#1a1a1a';this.style.height='380px';this.style.display='block'" onerror="this.style.height='380px';this.style.background='#181818';this.style.display='block'"></div>
+      <div class="svc-img"><img src="IMG_0393.jpeg" alt="Gold macro" style="width:100%;height:380px;object-fit:cover;display:block;"></div>
     </div>
     <div class="svc r">
-      <div class="svc-img"><img src="IMG_0392.jpeg" alt="Compliance documentation" onerror="this.style.background='#1a1a1a';this.style.height='380px';this.style.display='block'" onerror="this.style.height='380px';this.style.background='#181818';this.style.display='block'"></div>
+      <div class="svc-img"><img src="IMG_0392.jpeg" alt="Compliance documentation" style="width:100%;height:380px;object-fit:cover;display:block;"></div>
       <div class="svc-ct fu">
         <div class="svc-idx">02</div>
         <div class="svc-t" data-en="Compliance & Documentation" data-fr="Conformité & Documentation" data-es="Cumplimiento & Documentación">Compliance & Documentation</div>
@@ -679,7 +679,7 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
         <p class="svc-p" data-en="As a registered Comercializadora Internacional, we operate within the full legal framework for Colombian precious metals exports — under DIAN and MINCIT oversight, through the VUCE platform." data-fr="En tant que Commercialisateur International enregistré, nous opérons dans le cadre légal complet des exportations colombiennes de métaux précieux — sous supervision DIAN et MINCIT." data-es="Como Comercializadora Internacional registrada, operamos dentro del marco legal completo para exportaciones de metales preciosos colombianos — bajo supervisión DIAN y MINCIT.">As a registered Comercializadora Internacional, we operate within the full legal framework for Colombian precious metals exports — under DIAN and MINCIT oversight, through the VUCE platform.</p>
         <div class="tags"><span class="tag">C.I. VUCE</span><span class="tag">DIAN</span><span class="tag">MINCIT</span></div>
       </div>
-      <div class="svc-img"><img src="IMG_0352.jpeg" alt="International trade" onerror="this.style.background='#1a1a1a';this.style.height='380px';this.style.display='block'" onerror="this.style.height='380px';this.style.background='#181818';this.style.display='block'"></div>
+      <div class="svc-img"><img src="IMG_0352.jpeg" alt="International trade" style="width:100%;height:380px;object-fit:cover;display:block;"></div>
     </div>
   </section>
   <section class="cta-band">
@@ -703,7 +703,7 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
 
 <div id="page-ethique" class="page">
   <div class="pg-hero">
-    <div class="pg-bg" style="background-size:cover;background-position:center;background-image:url('IMG_0342.jpeg');"></div>
+    <div class="pg-bg" style="background-size:cover;background-position:center;background-image:url('IMG_0343.jpeg');"></div>
     <div class="pg-overlay"></div>
     <div class="pg-ct fu">
       <span class="overline" data-en="Ethics & Governance" data-fr="Éthique & Gouvernance" data-es="Ética y Gobernanza">Ethics & Governance</span>
@@ -805,7 +805,7 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
 
 <div id="page-contact" class="page">
   <div class="pg-hero" style="height:44vh;min-height:320px;">
-    <div class="pg-bg" style="background-size:cover;background-position:center;background-image:url('IMG_0375.jpeg')"></div>
+    <div class="pg-bg" style="background-size:cover;background-position:center;background-image:url('IMG_0342.jpeg')"></div>
     <div class="pg-overlay"></div>
     <div class="pg-ct fu">
       <span class="overline" data-en="Get in Touch" data-fr="Prendre Contact" data-es="Contacto">Get in Touch</span>
