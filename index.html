@@ -304,11 +304,10 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
 
 <div id="page-home" class="page on">
 
-    <section class="hero">
+      <section class="hero">
     <div class="hero-media" style="position:absolute;inset:0;overflow:hidden;">
-      <div id="vimeo-bg" style="position:absolute;inset:0;overflow:hidden;z-index:0;">
-
-      <div id="hero-poster" style="position:absolute;inset:0;background-image:url('sama_poster.jpg');background-size:cover;background-position:center;transition:opacity 1.5s ease;"></div>
+      <div id="hero-poster" style="position:absolute;inset:0;background-image:url('sama_poster.jpg');background-size:cover;background-position:center;transition:opacity 1.5s ease;z-index:1;"></div>
+      <iframe id="vimeo-bg" src="https://player.vimeo.com/video/1184387434?background=1&autoplay=1&loop=1&muted=1&dnt=1" frameborder="0" allow="autoplay" style="position:absolute;top:50%;left:50%;width:177.78vh;height:100vh;min-width:100%;min-height:56.25vw;transform:translate(-50%,-50%);pointer-events:none;opacity:0;transition:opacity 1.5s ease;z-index:0;"></iframe>
     </div>
     <div class="hero-vignette"></div>
     <div class="hero-fade"></div>
@@ -319,6 +318,7 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
       </svg>
     </div>
   </section>
+
 
 
   <section style="background:#0F0F0F;padding:5.5rem 0 5rem;text-align:center;border-bottom:1px solid rgba(218,175,87,0.1);">
@@ -723,21 +723,19 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
     document.querySelectorAll("#page-home .fu").forEach(el=>el.classList.add("on"));
     initFU();
   });
-      function loadVimeo(){
+    function loadVimeo(){
+    var iframe = document.getElementById('vimeo-bg');
+    var poster = document.getElementById('hero-poster');
+    if(!iframe) return;
     var s = document.createElement('script');
     s.src = 'https://player.vimeo.com/api/player.js';
     s.onload = function(){
-      var p = new Vimeo.Player('vimeo-bg',{
-        id: 1184387434,
-        background: true,
-        muted: true,
-        autoplay: true,
-        loop: true,
-        dnt: true
-      });
+      var p = new Vimeo.Player(iframe);
       p.on('play', function(){
-        var poster = document.getElementById('hero-poster');
-        if(poster) poster.style.opacity = '0';
+        setTimeout(function(){
+          iframe.style.opacity = '1';
+          if(poster) poster.style.opacity = '0';
+        }, 500);
       });
     };
     document.head.appendChild(s);
