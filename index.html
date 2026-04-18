@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 <html lang="en">
@@ -61,20 +60,20 @@
     .page{display:none;}.page.on{display:block;}
 
 ```
-/* HERO — 60vh degradé suave al negro abajo */
-.hero{position:relative;width:100%;height:60vh;min-height:420px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
-.hero-media{position:absolute;inset:0;overflow:hidden;}
-.hero-poster{position:absolute;inset:0;background-size:cover;background-position:center top;background-image:url('hero_poster.jpg');z-index:1;transition:opacity 1.8s ease;}
-.hero-media iframe{position:absolute;top:50%;left:50%;width:177.78vh;height:100vh;min-width:100%;min-height:56.25vw;transform:translate(-50%,-50%);pointer-events:none;z-index:0;}
-.hero-vignette{position:absolute;inset:0;background:rgba(15,15,15,0.18);z-index:2;}
-.hero-fade{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(15,15,15,0.2) 0%,rgba(15,15,15,0.04) 25%,rgba(15,15,15,0.04) 55%,rgba(15,15,15,0.92) 90%,#0F0F0F 100%);z-index:2;}
-.hero-body{position:absolute;top:50%;left:50%;transform:translate(-50%,-55%);z-index:3;text-align:center;padding:0 2rem;width:100%;animation:rise 1.6s var(--ease) both;}
-@keyframes rise{from{opacity:0;transform:translate(-50%,-65%);}to{opacity:1;transform:translate(-50%,-55%);}}
+/* ── HERO — 60vh, degradé al negro ── */
+.hero{position:relative;width:100%;height:60vh;min-height:420px;overflow:hidden;display:flex;align-items:flex-end;justify-content:center;padding-bottom:4rem;}
+.hero-media{position:absolute;inset:0;overflow:hidden;z-index:0;}
+.hero-poster{position:absolute;inset:0;background-size:cover;background-position:center top;background-image:url('hero_poster.jpg');z-index:2;transition:opacity 1.8s ease;}
+.hero-media iframe{position:absolute;top:50%;left:50%;width:177.78vh;height:100vh;min-width:100%;min-height:56.25vw;transform:translate(-50%,-50%);pointer-events:none;z-index:1;}
+.hero-vignette{position:absolute;inset:0;background:rgba(15,15,15,0.15);z-index:3;}
+.hero-fade{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(15,15,15,0.25) 0%,rgba(15,15,15,0.0) 25%,rgba(15,15,15,0.0) 50%,rgba(15,15,15,0.88) 88%,#0F0F0F 100%);z-index:3;}
+.hero-body{position:relative;z-index:4;text-align:center;padding:0 2rem;width:100%;animation:rise 1.6s var(--ease) both;}
+@keyframes rise{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
 .hero-btn{display:inline-block;font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--white);border:1px solid rgba(218,175,87,0.5);padding:0.9rem 2.4rem;cursor:pointer;background:transparent;transition:all 0.4s var(--ease);}
 .hero-btn:hover{background:var(--gold);border-color:var(--gold);color:var(--black);}
-.hero-scroll{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);z-index:3;display:flex;flex-direction:column;align-items:center;gap:0.5rem;}
-.scroll-tick{width:1px;height:32px;background:linear-gradient(to bottom,var(--gold),transparent);animation:tick 2.2s ease-in-out infinite;}
-@keyframes tick{0%{opacity:0;height:0;}50%{opacity:0.7;height:40px;}100%{opacity:0;height:40px;transform:translateY(8px);}}
+.hero-scroll{position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);z-index:4;display:flex;flex-direction:column;align-items:center;gap:0.4rem;}
+.scroll-tick{width:1px;height:28px;background:linear-gradient(to bottom,var(--gold),transparent);animation:tick 2.2s ease-in-out infinite;}
+@keyframes tick{0%{opacity:0;height:0;}50%{opacity:0.7;height:36px;}100%{opacity:0;height:36px;transform:translateY(8px);}}
 @keyframes scrollChev{0%{opacity:0;transform:translateY(-6px);}50%{opacity:0.85;transform:translateY(0);}100%{opacity:0;transform:translateY(6px);}}
 
 section{padding:clamp(4.5rem,9vw,8rem) 0;}
@@ -255,6 +254,8 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
 
 <div id="page-home" class="page on">
 
+  <!-- HERO: 60vh, Vimeo de fondo, poster mientras carga, texto abajo centrado -->
+
   <section class="hero">
     <div class="hero-media">
       <div class="hero-poster" id="hero-poster"></div>
@@ -263,9 +264,9 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
     <div class="hero-vignette"></div>
     <div class="hero-fade"></div>
     <div class="hero-body">
-      <div style="font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:400;letter-spacing:0.55em;color:#F4F0E8;margin-bottom:0.7rem;text-shadow:0 2px 30px rgba(0,0,0,0.9);">S · A · M · A</div>
-      <div style="font-family:'Cormorant Garamond',serif;font-size:clamp(0.6rem,1vw,0.8rem);font-weight:300;letter-spacing:0.6em;color:rgba(218,175,87,0.75);text-transform:uppercase;margin-bottom:2.2rem;" data-en="International" data-fr="International" data-es="Internacional">International</div>
-      <div style="width:40px;height:1px;background:#DAAF57;margin:0 auto 2.2rem;opacity:0.7;"></div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:400;letter-spacing:0.55em;color:#F4F0E8;margin-bottom:0.6rem;text-shadow:0 2px 30px rgba(0,0,0,0.9);">S · A · M · A</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:clamp(0.6rem,1vw,0.8rem);font-weight:300;letter-spacing:0.6em;color:rgba(218,175,87,0.8);text-transform:uppercase;margin-bottom:2rem;" data-en="International" data-fr="International" data-es="Internacional">International</div>
+      <div style="width:40px;height:1px;background:#DAAF57;margin:0 auto 2rem;opacity:0.7;"></div>
       <button class="hero-btn" onclick="go('alliance')" data-en="Discover the Alliance" data-fr="Découvrir l'Alliance" data-es="Descubrir la Alianza">Discover the Alliance</button>
     </div>
     <div class="hero-scroll">
@@ -314,10 +315,10 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
         <h2 class="headline" data-en="Four principles. Every transaction." data-fr="Quatre principes. Chaque transaction." data-es="Cuatro principios. Cada transacción.">Four principles. Every transaction.</h2>
       </div>
       <div class="cards">
-        <div class="card fu"><span class="card-n">01</span><div class="card-t" data-en="Sovereign Metals" data-fr="Métaux Souverains" data-es="Metales Soberanos">Sovereign Metals</div><p class="card-p" data-en="Every gram originates in Colombia and is documented from the moment it leaves the ground. Origin matters. We know exactly where ours comes from." data-fr="Chaque gramme provient de Colombie et est documenté dès qu'il quitte le sol." data-es="Cada gramo se origina en Colombia y está documentado desde el momento en que sale del suelo.">Every gram originates in Colombia and is documented from the moment it leaves the ground. Origin matters.</p></div>
-        <div class="card fu d1"><span class="card-n">02</span><div class="card-t" data-en="Swiss Standards" data-fr="Standards Suisses" data-es="Estándares Suizos">Swiss Standards</div><p class="card-p" data-en="Our operational framework is shaped in La Chaux-de-Fonds — the birthplace of Swiss watchmaking. That same tradition of precision guides everything we do." data-fr="Notre cadre opérationnel est défini à La Chaux-de-Fonds — le berceau de l'horlogerie suisse." data-es="Nuestro marco operativo se define en La Chaux-de-Fonds — la cuna de la relojería suiza.">Our operational framework is shaped in La Chaux-de-Fonds — the birthplace of Swiss watchmaking.</p></div>
-        <div class="card fu d2"><span class="card-n">03</span><div class="card-t" data-en="Full Traceability" data-fr="Traçabilité Complète" data-es="Trazabilidad Completa">Full Traceability</div><p class="card-p" data-en="We believe transparency builds the best partnerships. Every shipment is traceable, certified, and ready for verification by our partners at any time." data-fr="Nous croyons que la transparence construit les meilleures alliances. Chaque envoi est traçable et certifié." data-es="Creemos que la transparencia construye las mejores alianzas. Cada envío es trazable y certificado.">We believe transparency builds the best partnerships. Every shipment is traceable and certified.</p></div>
-        <div class="card fu d3"><span class="card-n">04</span><div class="card-t" data-en="Responsible Trade" data-fr="Commerce Responsable" data-es="Comercio Responsable">Responsible Trade</div><p class="card-p" data-en="Ethical sourcing isn't a checkbox for us — it's the foundation. We work only with verified sources, and our compliance protocols are embedded in every step." data-fr="L'approvisionnement éthique n'est pas une case à cocher — c'est le fondement de notre activité." data-es="El abastecimiento ético no es una casilla — es el fundamento de nuestra actividad.">Ethical sourcing is our foundation. We work only with verified sources.</p></div>
+        <div class="card fu"><span class="card-n">01</span><div class="card-t" data-en="Sovereign Metals" data-fr="Métaux Souverains" data-es="Metales Soberanos">Sovereign Metals</div><p class="card-p" data-en="Every gram originates in Colombia and is documented from the moment it leaves the ground. Origin matters. We know exactly where ours comes from." data-fr="Chaque gramme provient de Colombie et est documenté dès qu'il quitte le sol. L'origine compte. Nous savons exactement d'où vient le nôtre." data-es="Cada gramo se origina en Colombia y está documentado desde que sale del suelo. El origen importa. Sabemos exactamente de dónde viene el nuestro.">Every gram originates in Colombia and is documented from the moment it leaves the ground. Origin matters.</p></div>
+        <div class="card fu d1"><span class="card-n">02</span><div class="card-t" data-en="Swiss Standards" data-fr="Standards Suisses" data-es="Estándares Suizos">Swiss Standards</div><p class="card-p" data-en="Our operational framework is shaped in La Chaux-de-Fonds — the birthplace of Swiss watchmaking. That same tradition of precision guides everything we do." data-fr="Notre cadre opérationnel est défini à La Chaux-de-Fonds — le berceau de l'horlogerie suisse. Cette tradition de précision guide tout ce que nous faisons." data-es="Nuestro marco operativo se define en La Chaux-de-Fonds — la cuna de la relojería suiza. Esa tradición de precisión guía todo lo que hacemos.">Our operational framework is shaped in La Chaux-de-Fonds — the birthplace of Swiss watchmaking.</p></div>
+        <div class="card fu d2"><span class="card-n">03</span><div class="card-t" data-en="Full Traceability" data-fr="Traçabilité Complète" data-es="Trazabilidad Completa">Full Traceability</div><p class="card-p" data-en="We believe transparency builds the best partnerships. Every shipment is traceable, certified, and ready for verification by our partners at any time." data-fr="Nous croyons que la transparence construit les meilleures alliances. Chaque envoi est traçable, certifié et prêt à être vérifié." data-es="Creemos que la transparencia construye las mejores alianzas. Cada envío es trazable, certificado y listo para verificación.">We believe transparency builds the best partnerships. Every shipment is traceable and certified.</p></div>
+        <div class="card fu d3"><span class="card-n">04</span><div class="card-t" data-en="Responsible Trade" data-fr="Commerce Responsable" data-es="Comercio Responsable">Responsible Trade</div><p class="card-p" data-en="Ethical sourcing isn't a checkbox for us — it's the foundation. We work only with verified sources, and our compliance protocols are embedded in every step." data-fr="L'approvisionnement éthique n'est pas une case à cocher — c'est le fondement. Nous travaillons uniquement avec des sources vérifiées." data-es="El abastecimiento ético no es una casilla — es el fundamento. Trabajamos únicamente con fuentes verificadas.">Ethical sourcing is our foundation. We work only with verified sources.</p></div>
       </div>
     </div>
   </section>
@@ -367,9 +368,9 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
           <div class="rule" style="margin-top:1.2rem;"></div>
           <h2 class="headline" data-en="An alliance built with intention." data-fr="Une alliance construite avec intention." data-es="Una alianza construida con intención.">An alliance built<br>with intention.</h2>
           <div class="spacer"></div>
-          <p class="body" data-en="South American Metal Alliance came together through years of trust, not opportunity. Our partners chose to build something that would endure — an institution rooted in the mineral wealth of Colombia and guided by the precision of Switzerland." data-fr="South American Metal Alliance s'est formée au fil des années de confiance, pas par opportunité. Nos partenaires ont choisi de construire quelque chose qui durerait — une institution ancrée dans la richesse minérale de la Colombie." data-es="South American Metal Alliance se formó a través de años de confianza, no de oportunidad. Nuestros socios eligieron construir algo que perdurara — una institución arraigada en la riqueza mineral de Colombia.">South American Metal Alliance came together through years of trust, not opportunity. Our partners chose to build something that would endure — an institution rooted in the mineral wealth of Colombia and guided by the precision of Switzerland.</p>
+          <p class="body" data-en="South American Metal Alliance came together through years of trust, not opportunity. Our partners chose to build something that would endure — an institution rooted in the mineral wealth of Colombia and guided by the precision of Switzerland." data-fr="South American Metal Alliance s'est formée au fil des années de confiance, pas par opportunité. Nos partenaires ont choisi de construire quelque chose qui durerait — une institution ancrée dans la richesse minérale de la Colombie et guidée par la précision de la Suisse." data-es="South American Metal Alliance se formó a través de años de confianza, no de oportunidad. Nuestros socios eligieron construir algo que perdurara — una institución arraigada en la riqueza mineral de Colombia y guiada por la precisión de Suiza.">South American Metal Alliance came together through years of trust, not opportunity. Our partners chose to build something that would endure — an institution rooted in the mineral wealth of Colombia and guided by the precision of Switzerland.</p>
           <div class="spacer"></div>
-          <p class="body" data-en="From the mining regions of Colombia to the financial centres of Europe, we have built relationships that go beyond transactions. For us, every partnership begins with a conversation and is sustained by results." data-fr="Des régions minières de Colombie aux centres financiers d'Europe, nous avons construit des relations qui vont au-delà des transactions." data-es="Desde las regiones mineras de Colombia hasta los centros financieros de Europa, hemos construido relaciones que van más allá de las transacciones.">From the mining regions of Colombia to the financial centres of Europe, we have built relationships that go beyond transactions.</p>
+          <p class="body" data-en="From the mining regions of Colombia to the financial centres of Europe, we have built relationships that go beyond transactions. For us, every partnership begins with a conversation and is sustained by results." data-fr="Des régions minières de Colombie aux centres financiers d'Europe, nous avons construit des relations qui vont au-delà des transactions. Chaque partenariat commence par une conversation et se maintient grâce aux résultats." data-es="Desde las regiones mineras de Colombia hasta los centros financieros de Europa, hemos construido relaciones que van más allá de las transacciones. Cada alianza comienza con una conversación y se sostiene con resultados.">From the mining regions of Colombia to the financial centres of Europe, we have built relationships that go beyond transactions.</p>
         </div>
         <div class="split-img fu d2">
           <img src="IMG_0391.jpeg" alt="Alliance office" onerror="this.style.height='480px';this.style.background='#181818';this.style.display='block'">
@@ -386,10 +387,10 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
         <h2 class="headline" data-en="The principles we work by." data-fr="Les principes qui guident notre travail." data-es="Los principios con los que trabajamos.">The principles we work by.</h2>
       </div>
       <div class="vals">
-        <div class="val fu d1"><div class="val-t" data-en="Sovereignty" data-fr="Souveraineté" data-es="Soberanía">Sovereignty</div><p class="val-p" data-en="We make our own decisions and hold ourselves to our own standards. No shortcuts, no compromises — because our partners deserve better." data-fr="Nous prenons nos propres décisions et nous nous tenons à nos propres standards. Pas de raccourcis, pas de compromis." data-es="Tomamos nuestras propias decisiones y nos regimos por nuestros propios estándares. Sin atajos, sin compromisos.">We make our own decisions and hold ourselves to our own standards. No shortcuts, no compromises.</p></div>
-        <div class="val fu d2"><div class="val-t" data-en="Rigour" data-fr="Rigueur" data-es="Rigor">Rigour</div><p class="val-p" data-en="Every process is documented, every claim is backed by data. We take precision seriously because trust depends on it." data-fr="Chaque processus est documenté, chaque affirmation est soutenue par des données. La confiance en dépend." data-es="Cada proceso está documentado, cada afirmación está respaldada por datos. La confianza depende de ello.">Every process is documented, every claim is backed by data. We take precision seriously.</p></div>
-        <div class="val fu d1"><div class="val-t" data-en="Transparency" data-fr="Transparence" data-es="Transparencia">Transparency</div><p class="val-p" data-en="We believe the best partnerships are built on openness. Our traceability records are available to verified partners, always." data-fr="Nous croyons que les meilleures alliances sont construites sur l'ouverture. Nos dossiers sont disponibles pour les partenaires vérifiés." data-es="Creemos que las mejores alianzas se construyen sobre la apertura. Nuestros registros están disponibles para socios verificados.">We believe the best partnerships are built on openness. Our records are available to verified partners.</p></div>
-        <div class="val fu d2"><div class="val-t" data-en="Excellence" data-fr="Excellence" data-es="Excelencia">Excellence</div><p class="val-p" data-en="Swiss standards are our benchmark in everything — not just in documentation, but in how we communicate, how we deliver, and how we show up for our partners." data-fr="Les standards suisses sont notre référence en tout — pas seulement dans la documentation, mais dans la façon dont nous communiquons et livrons." data-es="Los estándares suizos son nuestro referente en todo — no solo en documentación, sino en cómo nos comunicamos y entregamos.">Swiss standards are our benchmark in everything — in documentation, communication, and delivery.</p></div>
+        <div class="val fu d1"><div class="val-t" data-en="Sovereignty" data-fr="Souveraineté" data-es="Soberanía">Sovereignty</div><p class="val-p" data-en="We make our own decisions and hold ourselves to our own standards. No shortcuts, no compromises — because our partners deserve better." data-fr="Nous prenons nos propres décisions et nous tenons à nos propres standards. Pas de raccourcis, pas de compromis — parce que nos partenaires méritent mieux." data-es="Tomamos nuestras propias decisiones y nos regimos por nuestros propios estándares. Sin atajos, sin compromisos — porque nuestros socios merecen más.">We make our own decisions and hold ourselves to our own standards. No shortcuts, no compromises.</p></div>
+        <div class="val fu d2"><div class="val-t" data-en="Rigour" data-fr="Rigueur" data-es="Rigor">Rigour</div><p class="val-p" data-en="Every process is documented, every claim is backed by data. We take precision seriously because trust depends on it." data-fr="Chaque processus est documenté, chaque affirmation est soutenue par des données. Nous prenons la précision au sérieux car la confiance en dépend." data-es="Cada proceso está documentado, cada afirmación respaldada por datos. Tomamos la precisión en serio porque la confianza depende de ello.">Every process is documented, every claim is backed by data. We take precision seriously.</p></div>
+        <div class="val fu d1"><div class="val-t" data-en="Transparency" data-fr="Transparence" data-es="Transparencia">Transparency</div><p class="val-p" data-en="We believe the best partnerships are built on openness. Our traceability records are available to verified partners, always." data-fr="Nous croyons que les meilleures alliances sont construites sur l'ouverture. Nos dossiers de traçabilité sont disponibles pour les partenaires vérifiés, toujours." data-es="Creemos que las mejores alianzas se construyen sobre la apertura. Nuestros registros de trazabilidad están disponibles para socios verificados, siempre.">We believe the best partnerships are built on openness. Our records are available to verified partners.</p></div>
+        <div class="val fu d2"><div class="val-t" data-en="Excellence" data-fr="Excellence" data-es="Excelencia">Excellence</div><p class="val-p" data-en="Swiss standards are our benchmark in everything — not just in documentation, but in how we communicate, how we deliver, and how we show up for our partners." data-fr="Les standards suisses sont notre référence en tout — pas seulement dans la documentation, mais dans la façon dont nous communiquons, livrons et nous présentons." data-es="Los estándares suizos son nuestro referente en todo — no solo en documentación, sino en cómo nos comunicamos, entregamos y apoyamos a nuestros socios.">Swiss standards are our benchmark in everything — in documentation, communication, and delivery.</p></div>
       </div>
     </div>
   </section>
@@ -428,10 +429,10 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
     </div>
     <div class="svc r">
       <div class="svc-img"><img src="IMG_0394.jpeg" alt="Compliance" style="width:100%;height:380px;object-fit:cover;display:block;"></div>
-      <div class="svc-ct fu"><div class="svc-idx">02</div><div class="svc-t" data-en="Compliance & Documentation" data-fr="Conformité & Documentation" data-es="Cumplimiento & Documentación">Compliance & Documentation</div><p class="svc-p" data-en="We understand that our partners need certainty. That's why our anti-money laundering framework, legal registrations, and transaction documentation are always in order — so your team never has to ask twice." data-fr="Nos partenaires ont besoin de certitude. C'est pourquoi notre cadre anti-blanchiment, nos enregistrements légaux et notre documentation sont toujours en ordre." data-es="Nuestros socios necesitan certeza. Por eso nuestro marco antilavado, registros legales y documentación están siempre en orden.">We understand that our partners need certainty. Our anti-money laundering framework and documentation are always in order.</p><div class="tags"><span class="tag">SAGRILAFT</span><span class="tag">SIREL/UIAF</span><span class="tag">AML</span></div></div>
+      <div class="svc-ct fu"><div class="svc-idx">02</div><div class="svc-t" data-en="Compliance & Documentation" data-fr="Conformité & Documentation" data-es="Cumplimiento & Documentación">Compliance & Documentation</div><p class="svc-p" data-en="We understand that our partners need certainty. That's why our anti-money laundering framework, legal registrations, and transaction documentation are always in order — so your team never has to ask twice." data-fr="Nos partenaires ont besoin de certitude. C'est pourquoi notre cadre anti-blanchiment, nos enregistrements légaux et notre documentation sont toujours en ordre — pour que votre équipe n'ait jamais à redemander." data-es="Nuestros socios necesitan certeza. Por eso nuestro marco antilavado, registros legales y documentación están siempre en orden — para que su equipo nunca tenga que preguntar dos veces.">We understand that our partners need certainty. Our anti-money laundering framework and documentation are always in order.</p><div class="tags"><span class="tag">SAGRILAFT</span><span class="tag">SIREL/UIAF</span><span class="tag">AML</span></div></div>
     </div>
     <div class="svc">
-      <div class="svc-ct fu"><div class="svc-idx">03</div><div class="svc-t" data-en="International Trade" data-fr="Commerce International" data-es="Comercio Internacional">International Trade</div><p class="svc-p" data-en="As a registered Comercializadora Internacional, we operate within the full legal framework for Colombian precious metals exports — under DIAN and MINCIT oversight, through the VUCE platform." data-fr="En tant que Commercialisateur International enregistré, nous opérons dans le cadre légal complet des exportations de métaux précieux colombiens — sous supervision DIAN et MINCIT." data-es="Como Comercializadora Internacional registrada, operamos dentro del marco legal completo para exportaciones de metales preciosos colombianos — bajo supervisión DIAN y MINCIT.">As a registered Comercializadora Internacional, we operate within the full legal framework for Colombian precious metals exports.</p><div class="tags"><span class="tag">C.I. VUCE</span><span class="tag">DIAN</span><span class="tag">MINCIT</span></div></div>
+      <div class="svc-ct fu"><div class="svc-idx">03</div><div class="svc-t" data-en="International Trade" data-fr="Commerce International" data-es="Comercio Internacional">International Trade</div><p class="svc-p" data-en="As a registered Comercializadora Internacional, we operate within the full legal framework for Colombian precious metals exports — under DIAN and MINCIT oversight, through the VUCE platform." data-fr="En tant que Commercialisateur International enregistré, nous opérons dans le cadre légal complet des exportations de métaux précieux colombiens — sous supervision DIAN et MINCIT, via la plateforme VUCE." data-es="Como Comercializadora Internacional registrada, operamos dentro del marco legal completo para exportaciones de metales preciosos colombianos — bajo supervisión DIAN y MINCIT, a través de la plataforma VUCE.">As a registered Comercializadora Internacional, we operate within the full legal framework for Colombian precious metals exports.</p><div class="tags"><span class="tag">C.I. VUCE</span><span class="tag">DIAN</span><span class="tag">MINCIT</span></div></div>
       <div class="svc-img"><img src="IMG_0348.jpeg" alt="International trade" style="width:100%;height:380px;object-fit:cover;display:block;"></div>
     </div>
   </section>
@@ -464,12 +465,12 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
         <p class="body" data-en="Ethical practice isn't something we apply at the end of a process — it's built into how we work from the start. Our regulatory framework covers both Colombia and Switzerland, and we hold ourselves to the highest standard of both." data-fr="La pratique éthique n'est pas quelque chose que nous appliquons à la fin d'un processus — elle est intégrée dans notre façon de travailler dès le début. Notre cadre réglementaire couvre la Colombie et la Suisse." data-es="La práctica ética no es algo que aplicamos al final de un proceso — está integrada en nuestra forma de trabajar desde el principio. Nuestro marco regulatorio cubre tanto Colombia como Suiza.">Ethical practice isn't something we apply at the end of a process — it's built into how we work from the start.</p>
       </div>
       <div class="comp-grid">
-        <div class="comp-c fu"><div class="comp-ico"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg></div><div class="comp-t">RUCOM</div><p class="comp-p" data-en="Registro Único de Comercializadores de Minerales. Every transaction is registered with Colombia's National Mining Agency, providing a clear and verifiable record." data-fr="Chaque transaction est enregistrée auprès de l'Agence Nationale Minière de Colombie, fournissant un dossier clair et vérifiable." data-es="Cada transacción está registrada ante la Agencia Nacional de Minería de Colombia, proporcionando un registro claro y verificable.">Registro Único de Comercializadores de Minerales. Every transaction is registered with Colombia's National Mining Agency.</p><div class="comp-cd">ANM · Colombia</div></div>
-        <div class="comp-c fu d1"><div class="comp-ico"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 010 3.75H5.625a1.875 1.875 0 010-3.75z"/></svg></div><div class="comp-t">SAGRILAFT</div><p class="comp-p" data-en="Our anti-money laundering and risk management framework is a living part of how we operate every day." data-fr="Notre cadre de lutte contre le blanchiment est une partie vivante de notre fonctionnement quotidien." data-es="Nuestro marco antilavado es una parte viva de cómo operamos cada día.">Our anti-money laundering and risk management framework is a living part of how we operate every day.</p><div class="comp-cd">UIAF · Colombia</div></div>
-        <div class="comp-c fu d2"><div class="comp-ico"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.038 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.038-4.5-9S9.515 3 12 3"/></svg></div><div class="comp-t">SIREL / UIAF</div><p class="comp-p" data-en="We are registered with Colombia's Financial Intelligence Unit. Reporting obligations are met, without exception — because integrity cannot be selective." data-fr="Nous sommes enregistrés auprès de l'Unité de Renseignement Financier de Colombie. Les obligations de déclaration sont respectées, sans exception." data-es="Estamos registrados ante la Unidad de Inteligencia Financiera de Colombia. Las obligaciones de reporte se cumplen, sin excepción.">We are registered with Colombia's Financial Intelligence Unit. Reporting obligations are met, without exception.</p><div class="comp-cd">SIREL · Colombia</div></div>
+        <div class="comp-c fu"><div class="comp-ico"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg></div><div class="comp-t">RUCOM</div><p class="comp-p" data-en="Registro Único de Comercializadores de Minerales. Every transaction is registered with Colombia's National Mining Agency, providing a clear and verifiable record." data-fr="Registro Único de Comercializadores de Minerales. Chaque transaction est enregistrée auprès de l'Agence Nationale Minière de Colombie, fournissant un dossier clair et vérifiable." data-es="Registro Único de Comercializadores de Minerales. Cada transacción está registrada ante la Agencia Nacional de Minería de Colombia, proporcionando un registro claro y verificable.">Registro Único de Comercializadores de Minerales. Every transaction is registered with Colombia's National Mining Agency.</p><div class="comp-cd">ANM · Colombia</div></div>
+        <div class="comp-c fu d1"><div class="comp-ico"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 010 3.75H5.625a1.875 1.875 0 010-3.75z"/></svg></div><div class="comp-t">SAGRILAFT</div><p class="comp-p" data-en="Our anti-money laundering and risk management framework is a living part of how we operate every day." data-fr="Notre cadre de lutte contre le blanchiment et de gestion des risques est une partie vivante de notre fonctionnement quotidien." data-es="Nuestro marco antilavado y de gestión de riesgos es una parte viva de cómo operamos cada día.">Our anti-money laundering and risk management framework is a living part of how we operate every day.</p><div class="comp-cd">UIAF · Colombia</div></div>
+        <div class="comp-c fu d2"><div class="comp-ico"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.038 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.038-4.5-9S9.515 3 12 3"/></svg></div><div class="comp-t">SIREL / UIAF</div><p class="comp-p" data-en="We are registered with Colombia's Financial Intelligence Unit. Reporting obligations are met, without exception — because integrity cannot be selective." data-fr="Nous sommes enregistrés auprès de l'Unité de Renseignement Financier de Colombie. Les obligations de déclaration sont respectées, sans exception — car l'intégrité ne peut être sélective." data-es="Estamos registrados ante la Unidad de Inteligencia Financiera de Colombia. Las obligaciones de reporte se cumplen, sin excepción — porque la integridad no puede ser selectiva.">We are registered with Colombia's Financial Intelligence Unit. Reporting obligations are met, without exception.</p><div class="comp-cd">SIREL · Colombia</div></div>
         <div class="comp-c fu"><div class="comp-ico"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21"/></svg></div><div class="comp-t" data-en="Comercializadora Internacional" data-fr="Commercialisateur International" data-es="Comercializadora Internacional">Comercializadora Internacional</div><p class="comp-p" data-en="Registered as a C.I. through VUCE — Colombia's official single window for foreign trade. Full authorization under DIAN and MINCIT." data-fr="Enregistrée comme C.I. via VUCE — le guichet unique officiel du commerce extérieur de Colombie. Autorisation complète sous DIAN et MINCIT." data-es="Registrada como C.I. a través de VUCE — ventanilla única oficial de Colombia para el comercio exterior. Autorización completa bajo DIAN y MINCIT.">Registered as a C.I. through VUCE — Colombia's official single window for foreign trade.</p><div class="comp-cd">VUCE · DIAN · MINCIT</div></div>
-        <div class="comp-c fu d1"><div class="comp-ico"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25a3 3 0 013 3m3 0a6 6 0 01-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1121.75 8.25z"/></svg></div><div class="comp-t" data-en="Responsible Sourcing" data-fr="Approvisionnement Responsable" data-es="Abastecimiento Responsable">Responsible Sourcing</div><p class="comp-p" data-en="We work only with verified, legal sources. No conflict minerals, no grey channels — just clean, documented, origin-verified gold." data-fr="Nous travaillons uniquement avec des sources vérifiées et légales. Pas de minéraux de conflit, pas de canaux gris." data-es="Trabajamos únicamente con fuentes verificadas y legales. Sin minerales de conflicto, sin canales grises.">We work only with verified, legal sources. No conflict minerals, no grey channels.</p><div class="comp-cd">Responsible Mining</div></div>
-        <div class="comp-c fu d2"><div class="comp-ico"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg></div><div class="comp-t" data-en="Full Documentation" data-fr="Documentation Complète" data-es="Documentación Completa">Full Documentation</div><p class="comp-p" data-en="A complete audit trail is maintained for every shipment. Verified partners can request access to documentation at any time." data-fr="Une piste d'audit complète est maintenue pour chaque envoi. Les partenaires vérifiés peuvent demander l'accès à tout moment." data-es="Se mantiene un rastro de auditoría completo para cada envío. Los socios verificados pueden solicitar acceso en cualquier momento.">A complete audit trail is maintained for every shipment. Verified partners can request access at any time.</p><div class="comp-cd">Full Audit Trail</div></div>
+        <div class="comp-c fu d1"><div class="comp-ico"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25a3 3 0 013 3m3 0a6 6 0 01-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1121.75 8.25z"/></svg></div><div class="comp-t" data-en="Responsible Sourcing" data-fr="Approvisionnement Responsable" data-es="Abastecimiento Responsable">Responsible Sourcing</div><p class="comp-p" data-en="We work only with verified, legal sources. No conflict minerals, no grey channels — just clean, documented, origin-verified gold." data-fr="Nous travaillons uniquement avec des sources vérifiées et légales. Pas de minéraux de conflit, pas de canaux gris — uniquement de l'or propre, documenté et vérifié à l'origine." data-es="Trabajamos únicamente con fuentes verificadas y legales. Sin minerales de conflicto, sin canales grises — solo oro limpio, documentado y verificado en su origen.">We work only with verified, legal sources. No conflict minerals, no grey channels.</p><div class="comp-cd">Responsible Mining</div></div>
+        <div class="comp-c fu d2"><div class="comp-ico"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg></div><div class="comp-t" data-en="Full Documentation" data-fr="Documentation Complète" data-es="Documentación Completa">Full Documentation</div><p class="comp-p" data-en="A complete audit trail is maintained for every shipment. Verified partners can request access to documentation at any time." data-fr="Une piste d'audit complète est maintenue pour chaque envoi. Les partenaires vérifiés peuvent demander l'accès à la documentation à tout moment." data-es="Se mantiene un rastro de auditoría completo para cada envío. Los socios verificados pueden solicitar acceso a la documentación en cualquier momento.">A complete audit trail is maintained for every shipment. Verified partners can request access at any time.</p><div class="comp-cd">Full Audit Trail</div></div>
       </div>
     </div>
   </section>
@@ -485,7 +486,7 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
 
 <div id="page-founders" class="page">
   <div class="pg-hero">
-    <div class="pg-bg" style="background-image:url('IMG_0408.jpeg');background-size:cover;background-position:center top;"></div>
+    <div class="pg-bg" style="background-image:url('IMG_0408.png');background-size:cover;background-position:center top;"></div>
     <div class="pg-overlay"></div>
     <div class="pg-ct fu">
       <span class="overline" data-en="The People Behind SAMA" data-fr="Les Personnes derrière SAMA" data-es="Las Personas detrás de SAMA">The People Behind SAMA</span>
@@ -592,47 +593,37 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
       <span class="overline" data-en="Part of a broader group" data-fr="Membre d'un groupe plus large" data-es="Parte de un grupo más amplio">Part of a broader group</span>
     </div>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem 3rem;max-width:920px;margin:0 auto;">
-
-```
-  <a href="https://globexproperties.ch" target="_blank" style="text-decoration:none;opacity:0.55;transition:opacity 0.3s;display:flex;flex-direction:column;align-items:center;gap:0.6rem;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.55'">
-    <img src="https://globexproperties.ch/wp-content/uploads/2024/12/globex-crop-logo-e1749800378505.png" alt="Globex Properties" style="height:48px;width:auto;filter:brightness(0) invert(1);" onerror="this.style.display='none'">
-    <span style="font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.55);text-align:center;">Globex Properties Sàrl</span>
-    <span style="font-size:0.52rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(218,175,87,0.65);">Real Estate · Switzerland</span>
-  </a>
-
-  <a href="https://cra-construction.ch" target="_blank" style="text-decoration:none;opacity:0.55;transition:opacity 0.3s;display:flex;flex-direction:column;align-items:center;gap:0.6rem;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.55'">
-    <img src="https://cra-construction.ch/wp-content/uploads/2025/07/cropped-logo-white.png" alt="CRA Construction" style="height:48px;width:auto;filter:brightness(0) invert(1);" onerror="this.style.display='none'">
-    <span style="font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.55);text-align:center;">CRA Construction Sàrl</span>
-    <span style="font-size:0.52rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(218,175,87,0.65);">Construction · Switzerland</span>
-  </a>
-
-  <a href="https://roulartdcor.ch" target="_blank" style="text-decoration:none;opacity:0.55;transition:opacity 0.3s;display:flex;flex-direction:column;align-items:center;gap:0.6rem;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.55'">
-    <img src="https://roulartdcor.ch/wp-content/uploads/2026/02/LOGO-180x59.png" alt="RoulArt D-cor" style="height:48px;width:auto;filter:brightness(0) invert(1);" onerror="this.style.display='none'">
-    <span style="font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.55);text-align:center;">Roulart D-Cor Sàrl</span>
-    <span style="font-size:0.52rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(218,175,87,0.65);">Horlogerie · Switzerland</span>
-  </a>
-
-  <a href="https://arminwatch.com" target="_blank" style="text-decoration:none;opacity:0.55;transition:opacity 0.3s;display:flex;flex-direction:column;align-items:center;gap:0.6rem;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.55'">
-    <img src="https://arminwatch.com/wp-content/uploads/2023/09/Armin-Swiss_logo-black.png" alt="Armin Watch" style="height:48px;width:auto;filter:brightness(0) invert(1);" onerror="this.style.display='none'">
-    <span style="font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.55);text-align:center;">Armin Swiss Watch</span>
-    <span style="font-size:0.52rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(218,175,87,0.65);">Watches · Switzerland</span>
-  </a>
-
-  <a href="#" style="text-decoration:none;opacity:0.55;transition:opacity 0.3s;display:flex;flex-direction:column;align-items:center;gap:0.6rem;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.55'">
-    <span style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:400;color:rgba(255,255,255,0.85);letter-spacing:0.18em;text-transform:uppercase;margin-bottom:0.2rem;">EMA-TECH</span>
-    <span style="font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.55);text-align:center;">EMA-TECH</span>
-    <span style="font-size:0.52rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(218,175,87,0.65);">Technology · Switzerland</span>
-  </a>
-
-  <a href="#" style="text-decoration:none;opacity:0.55;transition:opacity 0.3s;display:flex;flex-direction:column;align-items:center;gap:0.6rem;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.55'">
-    <span style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:400;color:rgba(255,255,255,0.85);letter-spacing:0.18em;text-transform:uppercase;margin-bottom:0.2rem;">Globex Gold</span>
-    <span style="font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.55);text-align:center;">Globex Gold Trading Dubaï</span>
-    <span style="font-size:0.52rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(218,175,87,0.65);">Trading · UAE</span>
-  </a>
-
-</div>
-```
-
+      <a href="https://globexproperties.ch" target="_blank" style="text-decoration:none;opacity:0.55;transition:opacity 0.3s;display:flex;flex-direction:column;align-items:center;gap:0.6rem;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.55'">
+        <img src="https://globexproperties.ch/wp-content/uploads/2024/12/globex-crop-logo-e1749800378505.png" alt="Globex Properties" style="height:48px;width:auto;filter:brightness(0) invert(1);" onerror="this.style.display='none'">
+        <span style="font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.65);text-align:center;">Globex Properties Sàrl</span>
+        <span style="font-size:0.52rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(218,175,87,0.65);">Real Estate · Switzerland</span>
+      </a>
+      <a href="https://cra-construction.ch" target="_blank" style="text-decoration:none;opacity:0.55;transition:opacity 0.3s;display:flex;flex-direction:column;align-items:center;gap:0.6rem;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.55'">
+        <img src="https://cra-construction.ch/wp-content/uploads/2025/07/cropped-logo-white.png" alt="CRA Construction" style="height:48px;width:auto;filter:brightness(0) invert(1);" onerror="this.style.display='none'">
+        <span style="font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.65);text-align:center;">CRA Construction Sàrl</span>
+        <span style="font-size:0.52rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(218,175,87,0.65);">Construction · Switzerland</span>
+      </a>
+      <a href="https://roulartdcor.ch" target="_blank" style="text-decoration:none;opacity:0.55;transition:opacity 0.3s;display:flex;flex-direction:column;align-items:center;gap:0.6rem;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.55'">
+        <img src="https://roulartdcor.ch/wp-content/uploads/2026/02/LOGO-180x59.png" alt="RoulArt D-cor" style="height:48px;width:auto;filter:brightness(0) invert(1);" onerror="this.style.display='none'">
+        <span style="font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.65);text-align:center;">Roulart D-Cor Sàrl</span>
+        <span style="font-size:0.52rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(218,175,87,0.65);">Horlogerie · Switzerland</span>
+      </a>
+      <a href="https://arminwatch.com" target="_blank" style="text-decoration:none;opacity:0.55;transition:opacity 0.3s;display:flex;flex-direction:column;align-items:center;gap:0.6rem;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.55'">
+        <img src="https://arminwatch.com/wp-content/uploads/2023/09/Armin-Swiss_logo-black.png" alt="Armin Watch" style="height:48px;width:auto;filter:brightness(0) invert(1);" onerror="this.style.display='none'">
+        <span style="font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.65);text-align:center;">Armin Swiss Watch</span>
+        <span style="font-size:0.52rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(218,175,87,0.65);">Watches · Switzerland</span>
+      </a>
+      <a href="#" style="text-decoration:none;opacity:0.55;transition:opacity 0.3s;display:flex;flex-direction:column;align-items:center;gap:0.6rem;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.55'">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:400;color:rgba(255,255,255,0.9);letter-spacing:0.18em;text-transform:uppercase;">EMA-TECH</span>
+        <span style="font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.65);text-align:center;">EMA-TECH</span>
+        <span style="font-size:0.52rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(218,175,87,0.65);">Technology · Switzerland</span>
+      </a>
+      <a href="#" style="text-decoration:none;opacity:0.55;transition:opacity 0.3s;display:flex;flex-direction:column;align-items:center;gap:0.6rem;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.55'">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:400;color:rgba(255,255,255,0.9);letter-spacing:0.18em;text-transform:uppercase;">Globex Gold</span>
+        <span style="font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.65);text-align:center;">Globex Gold Trading Dubaï</span>
+        <span style="font-size:0.52rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(218,175,87,0.65);">Trading · UAE</span>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -671,18 +662,15 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
 </footer>
 
 <script>
-  window.addEventListener("scroll",()=>{
+  window.addEventListener("scroll",function(){
     document.getElementById("nav").classList.toggle("dark",window.scrollY>50);
   });
-
   function go(id){
-    document.querySelectorAll(".page").forEach(p=>p.classList.remove("on"));
+    document.querySelectorAll(".page").forEach(function(p){p.classList.remove("on");});
     var pg=document.getElementById("page-"+id);
     if(pg){pg.classList.add("on");window.scrollTo({top:0,behavior:"smooth"});setTimeout(initFU,80);}
   }
-
   function toggleMob(){document.getElementById("mobNav").classList.toggle("on");}
-
   var lang="en";
   function setLang(l){
     lang=l;
@@ -692,14 +680,12 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
       if(v!==null)el.innerHTML=v;
     });
   }
-
   function initFU(){
     var obs=new IntersectionObserver(function(entries){
       entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");obs.unobserve(e.target);}});
     },{threshold:0.06,rootMargin:"0px 0px -28px 0px"});
     document.querySelectorAll(".fu").forEach(function(el){el.classList.remove("on");obs.observe(el);});
   }
-
   function loadVimeo(){
     var s=document.createElement("script");
     s.src="https://player.vimeo.com/api/player.js";
@@ -714,7 +700,6 @@ footer{background:var(--black-soft);border-top:1px solid var(--border-s);padding
     };
     document.head.appendChild(s);
   }
-
   document.addEventListener("DOMContentLoaded",function(){
     document.querySelectorAll("#page-home .fu").forEach(function(el){el.classList.add("on");});
     initFU();
